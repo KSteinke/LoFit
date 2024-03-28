@@ -1,0 +1,37 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\Projekty\\LoFit\\LoFit_Server\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\LoFit_Server.bundle.scp.css",
+      "PackagePath": "staticwebassets\\LoFit_Server.bundle.scp.css"
+    },
+    {
+      "Id": "D:\\Projekty\\LoFit\\LoFit_Server\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "D:\\Projekty\\LoFit\\LoFit_Server\\wwwroot\\bootstrap\\bootstrap.css",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.css"
+    },
+    {
+      "Id": "D:\\Projekty\\LoFit\\LoFit_Server\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.LoFit_Server.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.LoFit_Server.props",
+      "PackagePath": "build\\LoFit_Server.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.LoFit_Server.props",
+      "PackagePath": "buildMultiTargeting\\LoFit_Server.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.LoFit_Server.props",
+      "PackagePath": "buildTransitive\\LoFit_Server.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

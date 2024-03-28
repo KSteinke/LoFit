@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\LoFit_Server.props" />
+</Project>

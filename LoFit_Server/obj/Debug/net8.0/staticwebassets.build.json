@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "tIy1Nlf75FY5ZVWfTYzpFK/eBv3s1GXqGGbU/CRqyls=",
+  "Hash": "Npa+o/beO7uhhnRfFDXTnyUtmpbDTQMHVoTGV6chocI=",
   "Source": "LoFit_Server",
   "BasePath": "_content/LoFit_Server",
   "Mode": "Default",
@@ -7836,6 +7836,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\app.css"
+    },
+    {
+      "Identity": "D:\\Projekty\\LoFit\\LoFit_Server\\wwwroot\\bootstrap\\arrow-up-circle-fill.svg",
+      "SourceId": "LoFit_Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Projekty\\LoFit\\LoFit_Server\\wwwroot\\",
+      "BasePath": "_content/LoFit_Server",
+      "RelativePath": "bootstrap/arrow-up-circle-fill.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\bootstrap\\arrow-up-circle-fill.svg"
     },
     {
       "Identity": "D:\\Projekty\\LoFit\\LoFit_Server\\wwwroot\\bootstrap\\bootstrap.css",

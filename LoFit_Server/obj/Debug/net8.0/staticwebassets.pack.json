@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\app.css"
     },
     {
+      "Id": "D:\\Projekty\\LoFit\\LoFit_Server\\wwwroot\\bootstrap\\arrow-up-circle-fill.svg",
+      "PackagePath": "staticwebassets\\bootstrap\\arrow-up-circle-fill.svg"
+    },
+    {
       "Id": "D:\\Projekty\\LoFit\\LoFit_Server\\wwwroot\\bootstrap\\bootstrap.css",
       "PackagePath": "staticwebassets\\bootstrap\\bootstrap.css"
     },

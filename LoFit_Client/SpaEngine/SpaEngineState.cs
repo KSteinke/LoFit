@@ -20,9 +20,7 @@ public abstract class SpaEngineState
     }   
 
     public virtual void StartTraining()
-    {
-        //Empty Default Implementation
-    }
+    { /* Empty Default Implementation */ }
 
     public SpaEngineStatesEnum GetCurrentStateName()
     {

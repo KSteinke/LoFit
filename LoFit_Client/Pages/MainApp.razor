@@ -1,0 +1,34 @@
+
+
+@if(_loFitSpaEngine.GetCurrentStateName() == SpaEngineStatesEnum.Init)
+{
+    <AppInit @rendermode="InteractiveAuto" OnClickCallback="StartTraining"/>
+}
+else if(_loFitSpaEngine.GetCurrentStateName() == SpaEngineStatesEnum.ListTrainings)
+{
+    <ListTrainings @rendermode="InteractiveAuto"/>
+}
+else if(_loFitSpaEngine.GetCurrentStateName() == SpaEngineStatesEnum.Training)
+{
+    <Training @rendermode="InteractiveAuto"/>
+}
+else{
+    <h1>Error</h1>
+}
+
+@code{
+    public ISpaEngineService _loFitSpaEngine = null;
+
+    protected override void OnInitialized()
+    {
+        _loFitSpaEngine =  new SpaEngineService();
+    }
+
+    public void StartTraining()
+    {
+        _loFitSpaEngine.TransitionTo(new ListTrainingsSpaEngineState());
+    }
+}   
+
+
+

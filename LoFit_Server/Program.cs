@@ -1,3 +1,5 @@
+using LoFit_Client.SpaEngine;
+using LoFit_Client.SpaEngine.Interfaces;
 using LoFit_Server.Components;
 
 var builder = WebApplication.CreateBuilder(args);

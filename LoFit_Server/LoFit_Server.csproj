@@ -9,5 +9,6 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.3" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="8.0.3" />
     <ProjectReference Include="..\LoFit_Client\LoFit_Client.csproj" />
+    <ProjectReference Include="..\LoFit_Models\LoFit_Models.csproj" />
   </ItemGroup>
 </Project>

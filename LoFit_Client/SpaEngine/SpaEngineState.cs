@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Components;
 using LoFit_Client.Pages;
 using LoFit_Client.SpaEngine.SpaEngineStates;
 
+
 namespace LoFit_Client.SpaEngine;
 
 public abstract class SpaEngineState

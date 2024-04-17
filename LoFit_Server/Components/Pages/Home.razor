@@ -1,0 +1,14 @@
+﻿@inject NavigationManager UriHelper
+@page "/"
+
+<PageTitle>LoFit</PageTitle>
+
+@*<MainApp @rendermode="InteractiveAuto"/>*@
+<MainApp @rendermode=@(new InteractiveWebAssemblyRenderMode(prerender: false))/>
+@code {
+    protected override void OnInitialized()
+    {
+        //TODO - If user not logged
+        //UriHelper.NavigateTo("Login");
+    }
+} 

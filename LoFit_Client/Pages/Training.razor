@@ -1,0 +1,71 @@
+@page "/Training"
+
+<div class="row mb-4 justify-content-center">
+    <div class="col text-center mx-3 w-100">
+        <div class="btn-group border border-3 border-dark" role="group" aria-label="Basic checkbox toggle button group">
+            <button type="button" class="btn btn-warning text-warning fs-5 fw-bolder border-end border-1 border-dark" id="btncheck1" autocomplete="off">Edit</button>
+            <button type="button" class="btn btn-danger text-danger fs-5 fw-bolder border-start border-1 border-dark" id="btncheck2" autocomplete="off">Delete</button>
+        </div>
+    </div>
+</div>
+<div class="row mb-4">
+    <div class="col text-center mx-3">
+        <h3 class="text-dark  fw-bolder">Training step:</h3>
+    </div>
+    <div class="col text-center mx-3">
+        <h1 class="text-dark fw-bolder">3 of 10</h1>
+    </div>
+</div>
+
+<div class="row mb-4 mx-3 justify-content-center">
+    <div class="col text-center border border-3 border-dark rounded-5">
+        <div class="row my-2">
+            <h1 class="text-dark fw-bolder">Squat with weight</h1>
+        </div>
+        <div class="row my-2 align-items-center">
+            <div class="col-6">
+                <h3 class="text-dark text-start">Weight:</h3>
+            </div>
+            <div class="col-6">
+                <div>
+                    <select class="form-select rounded-5 border border-3 border-dark" id="exampleSelect1">
+                        @for(int i=1; i<101; i++)
+                        {
+                            <option class="text-dark">@i kg</option>
+                        }
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row my-2 align-items-center">
+            <div class="col-6">
+                <h3 class="text-dark text-start">Repetitions:</h3>
+            </div>
+            <div class="col-6">
+                <div>
+                    <select class="form-select rounded-5 border border-3 border-dark" id="exampleSelect1">
+                        @for(int i=1; i<50; i++)
+                        {
+                            <option class="text-dark">@i</option>
+                        }
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row my-3 align-items-center justify-content-center">
+            <button type="button" class="btn btn-success w-75 text-dark fs-5 fw-bolder border border-3 border-dark">Start</button>
+        </div>
+        <div class="row my-3 align-items-center justify-content-center">
+            <h2 class="text-dark fw-bolder">Time: 00:00</h2>
+        </div>
+    </div>
+</div>
+
+<div class="row mb-4 mx-3 justify-content-center">
+    <div class="col text-center mx-3">
+        <div class="btn-group border border-3 border-dark" role="group" aria-label="Basic checkbox toggle button group">
+            <button type="button" class="btn btn-warning w-100 text-warning fs-5 fw-bolder border-end border-1 border-dark" id="btncheck1" autocomplete="off">Previous</button>
+            <button type="button" class="btn btn-danger w-100 text-danger fs-5 fw-bolder border-start border-1 border-dark" id="btncheck2" autocomplete="off">Next</button>
+        </div>
+    </div>
+</div>

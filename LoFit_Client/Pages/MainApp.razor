@@ -1,0 +1,41 @@
+@using LoFit_Models.Dtos
+@using LoFit_Models.MockupData
+
+@if(loFitSpaEngine.GetCurrentStateName() == SpaEngineStatesEnum.Init)
+{
+    <AppInit @rendermode="InteractiveAuto" OnClickCallback="StartTraining"/>
+}
+else if(loFitSpaEngine.GetCurrentStateName() == SpaEngineStatesEnum.ListTrainings)
+{
+    <ListTrainings @rendermode="InteractiveAuto" userTrainingsList="userTrainingsList"/>
+}
+else if(loFitSpaEngine.GetCurrentStateName() == SpaEngineStatesEnum.Training)
+{
+    <Training @rendermode="InteractiveAuto"/>
+}
+else{
+    <h1>Error</h1>
+}
+
+@code{
+    public ISpaEngineService loFitSpaEngine = null;
+    //[Inject]
+    //public ITrainingService trainingService {get; set;}
+    public IEnumerable<ListTrainingsDto> userTrainingsList {get; set;}
+
+
+    protected override void OnInitialized()
+    {
+        loFitSpaEngine =  new SpaEngineService();
+    } 
+
+    public async Task StartTraining()
+    {
+        loFitSpaEngine.TransitionTo(new ListTrainingsSpaEngineState());
+        //userTrainingsList = await trainingService.ListTrainingsAsync();
+        userTrainingsList = await MockupData.MockUpListTrainingsAsync();
+    }
+}   
+
+
+

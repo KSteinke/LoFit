@@ -8,8 +8,8 @@ using LoFit_Models.Dtos;
 public class SpaEngineService : ISpaEngineService
 {
     private SpaEngineState spaState = null;
-    private List<TrainingSetDto> trainingSetDtos;
-    public List<TrainingSetDto> TrainingSetDtos
+    private IEnumerable<TrainingSetDto> trainingSetDtos;
+    public IEnumerable<TrainingSetDto> TrainingSetDtos
     {
         get { return this.trainingSetDtos;}
         set { this.trainingSetDtos = value;}

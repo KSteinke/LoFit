@@ -1,3 +1,4 @@
+using LoFit_Client.Services.CommonServices;
 using LoFit_Client.SpaEngine;
 using LoFit_Client.SpaEngine.Interfaces;
 using LoFit_Server.Components;
@@ -8,6 +9,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents()
     .AddInteractiveWebAssemblyComponents();
+
+//CommonServices.ConfigureCommonServices(builder.Services);
 
 var app = builder.Build();
 

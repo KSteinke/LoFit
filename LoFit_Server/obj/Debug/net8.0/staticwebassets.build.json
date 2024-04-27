@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "OHVRypdXnRaewjMiXKxDO5X7xtJGObZEsqgDIMkqDk8=",
+  "Hash": "+A4MqL0DO8A/GxkO3qUz/EK7ffAn03F8NmtJvH0NT/Q=",
   "Source": "LoFit_Server",
   "BasePath": "_content/LoFit_Server",
   "Mode": "Default",
@@ -7969,6 +7969,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.png"
+    },
+    {
+      "Identity": "D:\\Projekty\\LoFit\\LoFit_Server\\wwwroot\\js\\CookieManager.js",
+      "SourceId": "LoFit_Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Projekty\\LoFit\\LoFit_Server\\wwwroot\\",
+      "BasePath": "_content/LoFit_Server",
+      "RelativePath": "js/CookieManager.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\CookieManager.js"
     }
   ]
 }

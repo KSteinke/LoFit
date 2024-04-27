@@ -4,7 +4,7 @@
         <h1 class="text-dark fw-bolder">Great job!</h1>
     </div>
     <div class="col">
-        <button type="button" class="btn btn-dark text-dark fs-5 fw-bolder border border-3 border-dark">Close summary</button>
+        <button type="button" class="btn btn-dark text-dark fs-5 fw-bolder border border-3 border-dark" @onclick = "ReturnToInit" >Close summary</button>
     </div>
 </div>
 
@@ -45,3 +45,13 @@
         
     </div>
 </div>
+
+@code{
+    [Parameter]
+    public EventCallback ReturnToInitCallback {get; set;}
+
+    public async Task ReturnToInit()
+    {
+        await ReturnToInitCallback.InvokeAsync();
+    } 
+}

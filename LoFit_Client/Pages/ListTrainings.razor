@@ -10,7 +10,7 @@
 
 <div class="row mb-4 mx-3 justify-content-center">
     <div class="col-sm-7 ">
-        <button type="button" class="btn btn-warning w-100 text-dark fs-1 fw-bolder border border-3 border-warning">Add new training!</button>
+        <button type="button" class="btn btn-warning w-100 text-dark fs-1 fw-bolder border border-3 border-warning" @onclick="AddNewTraining">Add new training!</button>
     </div>   
 </div>
 
@@ -19,12 +19,27 @@
 {
     <div class="row mb-4 mx-3 justify-content-center">
         <div class="col-sm-7 ">
-            <button type="button" class="btn btn-dark w-100 text-dark fs-1 fw-bolder border border-3 border-dark">@userTraining.Name</button>
+            <button type="button" class="btn btn-dark w-100 text-dark fs-1 fw-bolder border border-3 border-dark" @onclick = "(e) => StartTrainingSet(userTraining)">@userTraining.Name</button>
         </div>   
     </div>
 }
 
 @code{
-   [Parameter]
-   public IEnumerable<ListTrainingsDto>? userTrainingsList {get; set;}
+    [Parameter]
+    public IEnumerable<ListTrainingsDto>? userTrainingsList {get; set;}
+    
+    [Parameter]
+    public EventCallback<ListTrainingsDto> StartTrainingSetCallback {get; set;}
+    private async Task StartTrainingSet(ListTrainingsDto trainingDto)
+    {
+        //TODO - add null handling
+        await StartTrainingSetCallback.InvokeAsync(trainingDto);
+    }
+
+    [Parameter]
+    public EventCallback AddNewTrainingSetCallback { get; set; }
+    private async Task AddNewTraining()
+    {
+        await AddNewTrainingSetCallback.InvokeAsync();
+    }
 }    

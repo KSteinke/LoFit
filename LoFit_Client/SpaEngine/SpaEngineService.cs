@@ -30,6 +30,31 @@ public class SpaEngineService : ISpaEngineService
         spaState.StartTraining();
     }
 
+    public void AddNewTrainingSet()
+    {
+        spaState.AddNewTrainingSet();
+    }
+
+    public void SaveNewTraining()
+    {
+        spaState.SaveNewTraining();
+    }
+
+    public void StartTrainingSet()
+    {
+        spaState.StartTrainingSet();
+    }
+
+    public void FinishTraining()
+    {
+        spaState.FinishTraining();
+    }
+
+    public void ReturnToInit()
+    {
+        spaState.ReturnToInit();
+    }
+
     public SpaEngineStatesEnum GetCurrentStateName()
     {
         return this.spaState.GetCurrentStateName();

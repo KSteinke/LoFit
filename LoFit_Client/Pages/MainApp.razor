@@ -1,41 +1,78 @@
 @using LoFit_Models.Dtos
 @using LoFit_Models.MockupData
 
-@if(loFitSpaEngine.GetCurrentStateName() == SpaEngineStatesEnum.Init)
+@switch(LoFitSpaEngine.GetCurrentStateName())
 {
-    <AppInit @rendermode="InteractiveAuto" OnClickCallback="StartTraining"/>
-}
-else if(loFitSpaEngine.GetCurrentStateName() == SpaEngineStatesEnum.ListTrainings)
-{
-    <ListTrainings @rendermode="InteractiveAuto" userTrainingsList="userTrainingsList"/>
-}
-else if(loFitSpaEngine.GetCurrentStateName() == SpaEngineStatesEnum.Training)
-{
-    <Training @rendermode="InteractiveAuto"/>
-}
-else{
-    <h1>Error</h1>
+    case SpaEngineStatesEnum.Init:
+        <AppInit @rendermode="InteractiveAuto" OnClickCallback="StartTraining"/>
+        break;
+
+    case SpaEngineStatesEnum.ListTrainings:
+        <ListTrainings @rendermode="InteractiveAuto" userTrainingsList="UserTrainingsList" StartTrainingSetCallback="StartTrainingSet"  AddNewTrainingSetCallback="AddNewTrainingSet"/>
+        break;
+
+    case SpaEngineStatesEnum.Training:
+        <Training @rendermode="InteractiveAuto" FinishTrainingCallback="FinishTraining"/>
+        break;
+
+    case SpaEngineStatesEnum.AddTraining:
+        <AddTraining @rendermode="InteractiveAuto" SaveNewTrainingCallback="SaveNewTraining"/>
+        break;
+
+    case SpaEngineStatesEnum.Summary:
+        <Summary @rendermode="InteractiveAuto" ReturnToInitCallback="ReturnToInit"/>
+        break;
+    default:
+        <h1>Error</h1>
+        break;
 }
 
 @code{
-    public ISpaEngineService loFitSpaEngine = null;
+    public ISpaEngineService LoFitSpaEngine = null;
     //[Inject]
     //public ITrainingService trainingService {get; set;}
-    public IEnumerable<ListTrainingsDto> userTrainingsList {get; set;}
+    public IEnumerable<ListTrainingsDto> UserTrainingsList {get; set;} 
 
-
+    
     protected override void OnInitialized()
     {
-        loFitSpaEngine =  new SpaEngineService();
+        this.LoFitSpaEngine =  new SpaEngineService();
     } 
 
     public async Task StartTraining()
     {
-        loFitSpaEngine.TransitionTo(new ListTrainingsSpaEngineState());
+        LoFitSpaEngine.StartTraining();
         //userTrainingsList = await trainingService.ListTrainingsAsync();
-        userTrainingsList = await MockupData.MockUpListTrainingsAsync();
+        UserTrainingsList = await MockupData.MockUpListTrainingsAsync();
     }
-}   
+    public async Task AddNewTrainingSet()
+    {
+        //TODO - add implementation and state transition
+        LoFitSpaEngine.AddNewTrainingSet();
 
+    }
+    
+    public async Task SaveNewTraining(ListTrainingsDto newTrainingSet)
+    {
+        LoFitSpaEngine.SaveNewTraining();
+        //Implement sending new value to db
+    }
+
+    public async Task StartTrainingSet(ListTrainingsDto trainingSet)
+    {
+        LoFitSpaEngine.StartTrainingSet();
+    }
+
+    public async Task FinishTraining()
+    {
+        LoFitSpaEngine.FinishTraining();
+    }
+
+    public async Task ReturnToInit()
+    {
+        LoFitSpaEngine.ReturnToInit();
+    }
+    
+}   
 
 

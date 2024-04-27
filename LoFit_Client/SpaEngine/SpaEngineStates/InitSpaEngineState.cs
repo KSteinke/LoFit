@@ -8,7 +8,7 @@ public class InitSpaEngineState : SpaEngineState
     }
     public override void StartTraining()
     {
-        this._spaEngineService.TransitionTo(new ListTrainingsSpaEngineState());
+        this.spaEngineService.TransitionTo(new ListTrainingsSpaEngineState());
     }
     
 }

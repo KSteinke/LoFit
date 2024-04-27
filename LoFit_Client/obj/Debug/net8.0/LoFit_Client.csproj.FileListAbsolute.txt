@@ -1027,3 +1027,12 @@ D:\Projekty\LoFit\LoFit_Client\obj\Debug\net8.0\LoFit_Client.dll
 D:\Projekty\LoFit\LoFit_Client\obj\Debug\net8.0\refint\LoFit_Client.dll
 D:\Projekty\LoFit\LoFit_Client\obj\Debug\net8.0\LoFit_Client.pdb
 D:\Projekty\LoFit\LoFit_Client\obj\Debug\net8.0\ref\LoFit_Client.dll
+D:\Projekty\LoFit\LoFit_Client\bin\Debug\net8.0\wwwroot\_framework\LoFit_Models.pdb
+D:\Projekty\LoFit\LoFit_Client\bin\Debug\net8.0\wwwroot\_framework\LoFit_Models.wasm
+D:\Projekty\LoFit\LoFit_Client\bin\Debug\net8.0\wwwroot\_framework\LoFit_Models.wasm.gz
+D:\Projekty\LoFit\LoFit_Client\bin\Debug\net8.0\wwwroot\_framework\LoFit_Models.pdb.gz
+D:\Projekty\LoFit\LoFit_Client\bin\Debug\net8.0\LoFit_Models.dll
+D:\Projekty\LoFit\LoFit_Client\bin\Debug\net8.0\LoFit_Models.pdb
+D:\Projekty\LoFit\LoFit_Client\obj\Debug\net8.0\webcil\LoFit_Models.wasm
+D:\Projekty\LoFit\LoFit_Client\obj\Debug\net8.0\compressed\qql90bx3o5.gz
+D:\Projekty\LoFit\LoFit_Client\obj\Debug\net8.0\compressed\vw25sis2zk.gz

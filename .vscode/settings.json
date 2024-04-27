@@ -1,3 +1,3 @@
 {
-    "dotnet.defaultSolution": "LoFit_Server.sln"
+    "dotnet.defaultSolution": "LoFit_Models.sln"
 }

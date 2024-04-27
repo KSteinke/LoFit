@@ -3,11 +3,12 @@ using Microsoft.AspNetCore.Components;
 using LoFit_Client.Pages;
 using LoFit_Client.SpaEngine.SpaEngineStates;
 
+
 namespace LoFit_Client.SpaEngine;
 
 public abstract class SpaEngineState
 {
-    protected ISpaEngineService _spaEngineService;
+    protected ISpaEngineService spaEngineService;
     public SpaEngineStatesEnum spaEngineStateName;
     public SpaEngineStatesEnum SpaEngineStateName 
     {
@@ -16,12 +17,25 @@ public abstract class SpaEngineState
     }
     public void SetSpaEngineService(ISpaEngineService spaEngineService)
     {
-        this._spaEngineService = spaEngineService;
+        this.spaEngineService = spaEngineService;
     }   
 
     public virtual void StartTraining()
-    { /* Empty Default Implementation */ }
+    { /* Empty Default Implementation */ }                     
 
+    public virtual void AddNewTrainingSet()
+    { /* Empty Default Implementation */ }
+    
+    public virtual void SaveNewTraining()
+    { /* Empty Default Implementation */ }
+    
+    public virtual void StartTrainingSet()
+    { /* Empty Default Implementation */ }
+    public virtual void FinishTraining()
+    { /* Empty Default Implementation */ }
+    public virtual void ReturnToInit()
+    { /* Empty Default Implementation */ }
+    
     public SpaEngineStatesEnum GetCurrentStateName()
     {
         return this.spaEngineStateName;
@@ -32,5 +46,7 @@ public enum SpaEngineStatesEnum
 {
     Init,
     ListTrainings,
-    Training
+    Training,
+    AddTraining,
+    Summary
 }

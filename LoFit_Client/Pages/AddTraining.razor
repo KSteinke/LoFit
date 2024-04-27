@@ -1,9 +1,9 @@
 @page "/AddTraining"
-@rendermode InteractiveAuto
+@using LoFit_Models.Dtos
 
 <div class="row mb-4">
     <div class="col text-center mx-3">
-        <button type="button" class="btn btn-warning w-75 text-dark fs-5 fw-bolder border border-3 border-warning">Add this set to your training list!</button>
+        <button type="button" class="btn btn-warning w-75 text-dark fs-5 fw-bolder border border-3 border-warning" @onclick = "SaveNewTraining">Add this set to your training list!</button>
     </div>
 </div>
 
@@ -55,3 +55,19 @@
     </div>
 </div>
 
+@code{
+
+    public ListTrainingsDto NewTrainingSet {get; set;} 
+    protected override void OnInitialized()
+    {
+        this.NewTrainingSet = new ListTrainingsDto();
+    }
+
+    [Parameter]
+    public EventCallback<ListTrainingsDto> SaveNewTrainingCallback { get; set; }
+    
+    private async Task SaveNewTraining()
+    {
+        await SaveNewTrainingCallback.InvokeAsync(NewTrainingSet);
+    }
+}

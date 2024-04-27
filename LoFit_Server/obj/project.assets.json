@@ -496,6 +496,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
+          "LoFit_Models": "1.0.0",
           "Microsoft.AspNetCore.Components.WebAssembly": "8.0.1"
         },
         "compile": {
@@ -503,6 +504,16 @@
         },
         "runtime": {
           "bin/placeholder/LoFit_Client.dll": {}
+        }
+      },
+      "LoFit_Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/LoFit_Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LoFit_Models.dll": {}
         }
       }
     }
@@ -1320,11 +1331,17 @@
       "type": "project",
       "path": "../LoFit_Client/LoFit_Client.csproj",
       "msbuildProject": "../LoFit_Client/LoFit_Client.csproj"
+    },
+    "LoFit_Models/1.0.0": {
+      "type": "project",
+      "path": "../LoFit_Models/LoFit_Models.csproj",
+      "msbuildProject": "../LoFit_Models/LoFit_Models.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
       "LoFit_Client >= 1.0.0",
+      "LoFit_Models >= 1.0.0",
       "Microsoft.AspNetCore.Components.WebAssembly >= 8.0.3",
       "Microsoft.AspNetCore.Components.WebAssembly.Server >= 8.0.3"
     ]
@@ -1364,6 +1381,9 @@
           "projectReferences": {
             "D:\\Projekty\\LoFit\\LoFit_Client\\LoFit_Client.csproj": {
               "projectPath": "D:\\Projekty\\LoFit\\LoFit_Client\\LoFit_Client.csproj"
+            },
+            "D:\\Projekty\\LoFit\\LoFit_Models\\LoFit_Models.csproj": {
+              "projectPath": "D:\\Projekty\\LoFit\\LoFit_Models\\LoFit_Models.csproj"
             }
           }
         }

@@ -57,3 +57,5 @@ D:\Projekty\LoFit\LoFit_Server\obj\Debug\net8.0\refint\LoFit_Server.dll
 D:\Projekty\LoFit\LoFit_Server\obj\Debug\net8.0\LoFit_Server.pdb
 D:\Projekty\LoFit\LoFit_Server\obj\Debug\net8.0\LoFit_Server.genruntimeconfig.cache
 D:\Projekty\LoFit\LoFit_Server\obj\Debug\net8.0\ref\LoFit_Server.dll
+D:\Projekty\LoFit\LoFit_Server\bin\Debug\net8.0\LoFit_Models.dll
+D:\Projekty\LoFit\LoFit_Server\bin\Debug\net8.0\LoFit_Models.pdb

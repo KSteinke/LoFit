@@ -6,4 +6,14 @@ public class ListTrainingsSpaEngineState : SpaEngineState
     {
         SpaEngineStateName = SpaEngineStatesEnum.ListTrainings;
     }
+
+    public override void AddNewTrainingSet()
+    {
+        this.spaEngineService.TransitionTo(new AddTrainingSpaEngineState());
+    }
+
+    public override void StartTrainingSet()
+    {
+        this.spaEngineService.TransitionTo(new TrainingSpaEngineState());
+    }
 }

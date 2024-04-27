@@ -4,5 +4,10 @@ public interface ISpaEngineService
 {
     void TransitionTo(SpaEngineState newSpaState);
     SpaEngineStatesEnum GetCurrentStateName();
-    public void StartTraining();
+    void StartTraining();
+    void AddNewTrainingSet();
+    void SaveNewTraining();
+    void StartTrainingSet();
+    void FinishTraining();
+    void ReturnToInit();
 }

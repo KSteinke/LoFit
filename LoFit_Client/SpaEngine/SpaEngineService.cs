@@ -8,11 +8,11 @@ using LoFit_Models.Dtos;
 public class SpaEngineService : ISpaEngineService
 {
     private SpaEngineState spaState = null;
-    private List<ListTrainingsDto> listTrainingsDtos;
-    public List<ListTrainingsDto> ListTrainingsDtos
+    private List<TrainingSetDto> trainingSetDtos;
+    public List<TrainingSetDto> TrainingSetDtos
     {
-        get { return this.listTrainingsDtos;}
-        set { this.listTrainingsDtos = value;}
+        get { return this.trainingSetDtos;}
+        set { this.trainingSetDtos = value;}
     }
 
     
@@ -28,6 +28,31 @@ public class SpaEngineService : ISpaEngineService
     public void StartTraining()
     {
         spaState.StartTraining();
+    }
+
+    public void AddNewTrainingSet()
+    {
+        spaState.AddNewTrainingSet();
+    }
+
+    public void SaveNewTraining()
+    {
+        spaState.SaveNewTraining();
+    }
+
+    public void StartTrainingSet()
+    {
+        spaState.StartTrainingSet();
+    }
+
+    public void FinishTraining()
+    {
+        spaState.FinishTraining();
+    }
+
+    public void ReturnToInit()
+    {
+        spaState.ReturnToInit();
     }
 
     public SpaEngineStatesEnum GetCurrentStateName()

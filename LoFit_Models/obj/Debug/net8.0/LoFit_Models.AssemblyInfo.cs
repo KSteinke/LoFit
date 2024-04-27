@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LoFit_Models")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bded8f888a4c11ce1ad8afeb53105ffc6978de6d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+26a1487f876f721514df1faba3b082b68810d4ff")]
 [assembly: System.Reflection.AssemblyProductAttribute("LoFit_Models")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LoFit_Models")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

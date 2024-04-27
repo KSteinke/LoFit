@@ -53,7 +53,7 @@
             </div>
         </div>
         <div class="row my-3 align-items-center justify-content-center">
-            <button type="button" class="btn btn-success w-75 text-dark fs-5 fw-bolder border border-3 border-dark">Start</button>
+            <button type="button" class="btn btn-success w-75 text-dark fs-5 fw-bolder border border-3 border-dark" @onclick = "FinishTrainingCallback">Start</button>
         </div>
         <div class="row my-3 align-items-center justify-content-center">
             <h2 class="text-dark fw-bolder">Time: 00:00</h2>
@@ -69,3 +69,13 @@
         </div>
     </div>
 </div>
+
+@code{
+    [Parameter]
+    public EventCallback FinishTrainingCallback {get; set;}
+
+    public async Task FinishTraining()
+    {
+        await FinishTrainingCallback.InvokeAsync();
+    }
+}

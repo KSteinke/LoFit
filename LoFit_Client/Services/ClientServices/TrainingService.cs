@@ -13,7 +13,7 @@ public class TrainingService:ITrainingService
         this.httpClient = httpClient;
     }
 
-    public async Task<IEnumerable<ListTrainingsDto>> ListTrainingsAsync()
+    public async Task<IEnumerable<TrainingSetDto>> ListTrainingsAsync()
     {
         try
         {
@@ -27,7 +27,7 @@ public class TrainingService:ITrainingService
 
                 if(responese.StatusCode == HttpStatusCode.OK)
                 {
-                    var content = await responese.Content.ReadFromJsonAsync<IEnumerable<ListTrainingsDto>>();
+                    var content = await responese.Content.ReadFromJsonAsync<IEnumerable<TrainingSetDto>>();
                     return content;
                 }
                 else

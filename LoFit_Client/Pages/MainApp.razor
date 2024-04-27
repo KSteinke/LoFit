@@ -31,7 +31,7 @@
     public ISpaEngineService LoFitSpaEngine = null;
     //[Inject]
     //public ITrainingService trainingService {get; set;}
-    public IEnumerable<ListTrainingsDto> UserTrainingsList {get; set;} 
+    public IEnumerable<TrainingSetDto> UserTrainingsList {get; set;} 
 
     
     protected override void OnInitialized()
@@ -52,13 +52,13 @@
 
     }
     
-    public async Task SaveNewTraining(ListTrainingsDto newTrainingSet)
+    public async Task SaveNewTraining(TrainingSetDto newTrainingSet)
     {
         LoFitSpaEngine.SaveNewTraining();
         //Implement sending new value to db
     }
 
-    public async Task StartTrainingSet(ListTrainingsDto trainingSet)
+    public async Task StartTrainingSet(TrainingSetDto trainingSet)
     {
         LoFitSpaEngine.StartTrainingSet();
     }

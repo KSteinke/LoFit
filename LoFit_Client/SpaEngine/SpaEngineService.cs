@@ -8,11 +8,11 @@ using LoFit_Models.Dtos;
 public class SpaEngineService : ISpaEngineService
 {
     private SpaEngineState spaState = null;
-    private List<ListTrainingsDto> listTrainingsDtos;
-    public List<ListTrainingsDto> ListTrainingsDtos
+    private List<TrainingSetDto> trainingSetDtos;
+    public List<TrainingSetDto> TrainingSetDtos
     {
-        get { return this.listTrainingsDtos;}
-        set { this.listTrainingsDtos = value;}
+        get { return this.trainingSetDtos;}
+        set { this.trainingSetDtos = value;}
     }
 
     

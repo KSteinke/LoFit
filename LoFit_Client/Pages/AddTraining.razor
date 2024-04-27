@@ -57,14 +57,14 @@
 
 @code{
 
-    public ListTrainingsDto NewTrainingSet {get; set;} 
+    public TrainingSetDto NewTrainingSet {get; set;} 
     protected override void OnInitialized()
     {
-        this.NewTrainingSet = new ListTrainingsDto();
+        this.NewTrainingSet = new TrainingSetDto();
     }
 
     [Parameter]
-    public EventCallback<ListTrainingsDto> SaveNewTrainingCallback { get; set; }
+    public EventCallback<TrainingSetDto> SaveNewTrainingCallback { get; set; }
     
     private async Task SaveNewTraining()
     {

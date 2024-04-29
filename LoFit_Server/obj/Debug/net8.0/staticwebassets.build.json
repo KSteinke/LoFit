@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "+A4MqL0DO8A/GxkO3qUz/EK7ffAn03F8NmtJvH0NT/Q=",
+  "Hash": "DbuXdEB3fMvmq+u9mOrohORhS3OvVGue/JtlnJRWql4=",
   "Source": "LoFit_Server",
   "BasePath": "_content/LoFit_Server",
   "Mode": "Default",
@@ -19,6 +19,13 @@
     }
   ],
   "DiscoveryPatterns": [
+    {
+      "Name": "LoFit_Client\\wwwroot",
+      "Source": "LoFit_Client",
+      "ContentRoot": "D:\\Projekty\\LoFit\\LoFit_Client\\wwwroot\\",
+      "BasePath": "/",
+      "Pattern": "**"
+    },
     {
       "Name": "LoFit_Server\\wwwroot",
       "Source": "LoFit_Server",
@@ -7855,6 +7862,25 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "D:\\Projekty\\LoFit\\LoFit_Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Threading.Tasks.Dataflow.wasm"
+    },
+    {
+      "Identity": "D:\\Projekty\\LoFit\\LoFit_Client\\wwwroot\\appsettings.json",
+      "SourceId": "LoFit_Client",
+      "SourceType": "Project",
+      "ContentRoot": "D:\\Projekty\\LoFit\\LoFit_Client\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "appsettings.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "WasmResource",
+      "AssetTraitValue": "settings",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\appsettings.json"
     },
     {
       "Identity": "D:\\Projekty\\LoFit\\LoFit_Server\\obj\\Debug\\net8.0\\scopedcss\\bundle\\LoFit_Server.styles.css",

@@ -3,9 +3,14 @@
     return document.cookie;
 }
 
-export function set(key, value)
-{
-    document.cookie = `${key}=${value}`;
+export function set(key, value, expirationDays) {
+    let expirationDate = "";
+    if (expirationDays) {
+        const date = new Date();
+        date.setTime(date.getTime() + (expirationDays * 24 * 60 * 60 * 1000));
+        expirationDate = "; expires=" + date.toUTCString();
+    }
+    document.cookie = `${key}=${value}${expirationDate}; path=/`;
 }
 
 export function exists(key)

@@ -43,6 +43,8 @@
     public bool CookiesAccepted {get; set;}
     [Inject]
     public ICookieManager CookieManager {get; set;}
+    [Inject]
+    public IConfiguration Configuration {get; set;}
     //[Inject]
     //public ITrainingService trainingService {get; set;}
     //public IEnumerable<TrainingSetDto> UserTrainingsList {get; set;} 
@@ -97,7 +99,8 @@
 
     public async Task AcceptCookies()
     {
-        await CookieManager.SetValueAsync("Cookies Accepted", "True");
+        await CookieManager.SetValueAsync("Cookies Accepted", "True", Configuration.GetValue<int>("CookiesExpirationDays:CookiesAcceptedExpirationDays"));
+        Console.WriteLine(Configuration["CookiesExpirationDays:CookiesAcceptedExpirationDays"]);
         CookiesAccepted = await CookieManager.ExistsAsync("Cookies Accepted");
     }
     

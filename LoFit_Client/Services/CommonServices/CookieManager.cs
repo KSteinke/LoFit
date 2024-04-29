@@ -36,11 +36,11 @@ public class CookieManager : ICookieManager
         return result;
     }
 
-    public async Task SetValueAsync<T>(string key, T value)
+    public async Task SetValueAsync<T>(string key, T value, int expirationDays)
     {
 
         await WaitForReference();
-        await _accessorJsRef.Value.InvokeVoidAsync("set", key, value);
+        await _accessorJsRef.Value.InvokeVoidAsync("set", key, value, expirationDays);
     }
 
     public async Task<bool> ExistsAsync(string key)

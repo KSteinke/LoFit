@@ -1,6 +1,8 @@
 @using LoFit_Models.Dtos
 @using LoFit_Models.MockupData
 
+@*Main Page of SPA aplication, responisible for communication with state machine and handles callbacks that subcomponents invoke*@
+
 @if(!CookiesAccepted)
 {
 <div class="row mb-5">
@@ -45,6 +47,7 @@
     public ICookieManager CookieManager {get; set;}
     [Inject]
     public IConfiguration Configuration {get; set;}
+
     //[Inject]
     //public ITrainingService trainingService {get; set;}
     //public IEnumerable<TrainingSetDto> UserTrainingsList {get; set;} 
@@ -65,7 +68,6 @@
     {
         LoFitSpaEngine.StartTraining();
         //userTrainingsList = await trainingService.ListTrainingsAsync();
-        //UserTrainingsList = await MockupData.MockUpListTrainingsAsync();
         LoFitSpaEngine.TrainingSetDtos = await MockupData.MockUpListTrainingsAsync();
     }
     public async Task AddNewTrainingSet()

@@ -4,8 +4,6 @@ using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using LoFit_Client.Services.CommonServices;
 using LoFit_Client.Services.ClientServices.Interfaces;
 using LoFit_Client.Services.ClientServices;
-using LoFit_Client.Services.CommonServices.Interfaces;
-
 
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);

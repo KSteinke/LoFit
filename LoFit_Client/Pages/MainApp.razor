@@ -57,7 +57,7 @@
     {
         this.LoFitSpaEngine =  new SpaEngineService();
  
-    } 
+    }
 
     protected override async Task OnInitializedAsync()
     {
@@ -74,7 +74,6 @@
     {
         //TODO - add implementation and state transition
         LoFitSpaEngine.AddNewTrainingSet();
-
     }
     
     public async Task SaveNewTraining(TrainingSetDto newTrainingSet)
@@ -86,6 +85,8 @@
 
     public async Task StartTrainingSet(TrainingSetDto trainingSet)
     {
+        //await trainingService.GetExcerciseDetails
+        
         LoFitSpaEngine.StartTrainingSet();
     }
 

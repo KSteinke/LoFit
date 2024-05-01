@@ -15,6 +15,7 @@ public class SpaEngineService : ISpaEngineService
         set { this.trainingSetDtos = value;}
     }
 
+    public TrainingSetDetailsDto trainingSetDetailsDto { get; set; }
     
     public SpaEngineService()
     {

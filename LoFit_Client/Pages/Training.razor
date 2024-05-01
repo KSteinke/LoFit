@@ -114,7 +114,7 @@
         {
             this.elapsedTime = elapsedTime.Add(TimeSpan.FromSeconds(1));
             this.currentTime = $"{(int)elapsedTime.TotalMinutes:00}:{elapsedTime.Seconds:00}";
-            InvokeAsync(StateHasChanged); // Odświeżenie interfejsu użytkownika
+            InvokeAsync(StateHasChanged); // Refresh user interface
         }
     }
 

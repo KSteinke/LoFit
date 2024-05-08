@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js.gz"
     },
     {
+      "Id": "D:\\Projekty\\LoFit\\LoFit_Client\\wwwroot\\appsettings.json",
+      "PackagePath": "staticwebassets\\appsettings.json"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.LoFit_Client.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

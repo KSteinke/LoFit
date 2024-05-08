@@ -1,7 +1,8 @@
 namespace LoFit_Models.Dtos;
 
-public record TrainingSetDto
+public class TrainingSetDto
 {
     public Guid Id {get; set;}
-    public string Name {get; set;}
+    public string? Name {get; set;}
+    public IEnumerable<ExerciseDetailsDto>? ExerciseDetails;
 }

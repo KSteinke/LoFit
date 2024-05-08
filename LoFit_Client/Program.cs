@@ -6,7 +6,6 @@ using LoFit_Client.Services.ClientServices.Interfaces;
 using LoFit_Client.Services.ClientServices;
 
 
-
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 
 CommonServices.ConfigureCommonServices(builder.Services);

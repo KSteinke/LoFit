@@ -52,11 +52,20 @@
                 </div>
             </div>
         </div>
+        @if(timerEnabled == false)
+        {
+            <div class="row my-3 align-items-center justify-content-center">
+                <button type="button" class="btn btn-success w-75 text-dark fs-5 fw-bolder border border-3 border-dark" @onclick = "ToggleTimer">Start</button>
+            </div>
+        }
+        else{
+            <div class="row my-3 align-items-center justify-content-center">
+                <button type="button" class="btn btn-success w-75 text-dark fs-5 fw-bolder border border-3 border-dark" @onclick = "ToggleTimer">Pause</button>
+            </div>
+        }
+        
         <div class="row my-3 align-items-center justify-content-center">
-            <button type="button" class="btn btn-success w-75 text-dark fs-5 fw-bolder border border-3 border-dark" @onclick = "FinishTrainingCallback">Start</button>
-        </div>
-        <div class="row my-3 align-items-center justify-content-center">
-            <h2 class="text-dark fw-bolder">Time: 00:00</h2>
+            <h2 class="text-dark fw-bolder">Time: @currentTime</h2>
         </div>
     </div>
 </div>
@@ -65,7 +74,7 @@
     <div class="col text-center mx-3">
         <div class="btn-group border border-3 border-dark" role="group" aria-label="Basic checkbox toggle button group">
             <button type="button" class="btn btn-warning w-100 text-warning fs-5 fw-bolder border-end border-1 border-dark" id="btncheck1" autocomplete="off">Previous</button>
-            <button type="button" class="btn btn-danger w-100 text-danger fs-5 fw-bolder border-start border-1 border-dark" id="btncheck2" autocomplete="off">Next</button>
+            <button type="button" class="btn btn-success w-100 text-success fs-5 fw-bolder border-start border-1 border-dark" id="btncheck2" autocomplete="off" @onclick = "FinishTraining">Next</button>
         </div>
     </div>
 </div>
@@ -74,8 +83,60 @@
     [Parameter]
     public EventCallback FinishTrainingCallback {get; set;}
 
+    private TimeSpan elapsedTime = TimeSpan.Zero;
+    private string currentTime = "00:00";
+    private System.Timers.Timer? timer;
+    private bool timerEnabled = false;
+
     public async Task FinishTraining()
     {
+        StopAndResetTimer();
         await FinishTrainingCallback.InvokeAsync();
     }
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        StartTimer();
+    }
+
+    private void StartTimer()
+    {
+        timer = new System.Timers.Timer(1000); // Timer refreshes every 1000ms.
+        timer.Elapsed += RefreshTime;
+        timer.Start();
+    }
+
+    private void RefreshTime(object sender, System.Timers.ElapsedEventArgs e)
+    {
+        Console.WriteLine(elapsedTime);
+        if (timerEnabled)
+        {
+            this.elapsedTime = elapsedTime.Add(TimeSpan.FromSeconds(1));
+            this.currentTime = $"{(int)elapsedTime.TotalMinutes:00}:{elapsedTime.Seconds:00}";
+            InvokeAsync(StateHasChanged); // Refresh user interface
+        }
+    }
+
+    private void ToggleTimer()
+    {
+        timerEnabled = !timerEnabled;
+    }
+
+    private void StopAndResetTimer()
+    {
+        if (timer != null)
+        {
+            timer.Stop();
+            timer.Dispose();
+            timer = null;
+        }
+        elapsedTime = TimeSpan.Zero;
+        currentTime = "00:00";
+        timerEnabled = false;
+        InvokeAsync(StateHasChanged); // Odświeżenie interfejsu użytkownika
+    }
+
+   
+
 }

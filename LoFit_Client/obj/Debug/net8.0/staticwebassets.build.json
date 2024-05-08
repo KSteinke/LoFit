@@ -1,12 +1,20 @@
 {
   "Version": 1,
-  "Hash": "OLXSthDmLo55G6Z9vkRlLZdeP5ypDvPH7tTQALqlkLo=",
+  "Hash": "0gX4OeJuwx0PPIDPsj+LagLP7LLjuGKOHtqeVlAk3nY=",
   "Source": "LoFit_Client",
   "BasePath": "/",
   "Mode": "Root",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "LoFit_Client\\wwwroot",
+      "Source": "LoFit_Client",
+      "ContentRoot": "D:\\Projekty\\LoFit\\LoFit_Client\\wwwroot\\",
+      "BasePath": "/",
+      "Pattern": "**"
+    }
+  ],
   "Assets": [
     {
       "Identity": "D:\\Projekty\\LoFit\\LoFit_Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.boot.json",
@@ -7835,6 +7843,25 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "D:\\Projekty\\LoFit\\LoFit_Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Threading.Tasks.Dataflow.wasm"
+    },
+    {
+      "Identity": "D:\\Projekty\\LoFit\\LoFit_Client\\wwwroot\\appsettings.json",
+      "SourceId": "LoFit_Client",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Projekty\\LoFit\\LoFit_Client\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "appsettings.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "WasmResource",
+      "AssetTraitValue": "settings",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\appsettings.json"
     }
   ]
 }

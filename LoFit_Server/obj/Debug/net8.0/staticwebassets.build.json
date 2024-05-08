@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "OHVRypdXnRaewjMiXKxDO5X7xtJGObZEsqgDIMkqDk8=",
+  "Hash": "DbuXdEB3fMvmq+u9mOrohORhS3OvVGue/JtlnJRWql4=",
   "Source": "LoFit_Server",
   "BasePath": "_content/LoFit_Server",
   "Mode": "Default",
@@ -19,6 +19,13 @@
     }
   ],
   "DiscoveryPatterns": [
+    {
+      "Name": "LoFit_Client\\wwwroot",
+      "Source": "LoFit_Client",
+      "ContentRoot": "D:\\Projekty\\LoFit\\LoFit_Client\\wwwroot\\",
+      "BasePath": "/",
+      "Pattern": "**"
+    },
     {
       "Name": "LoFit_Server\\wwwroot",
       "Source": "LoFit_Server",
@@ -7857,6 +7864,25 @@
       "OriginalItemSpec": "D:\\Projekty\\LoFit\\LoFit_Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Threading.Tasks.Dataflow.wasm"
     },
     {
+      "Identity": "D:\\Projekty\\LoFit\\LoFit_Client\\wwwroot\\appsettings.json",
+      "SourceId": "LoFit_Client",
+      "SourceType": "Project",
+      "ContentRoot": "D:\\Projekty\\LoFit\\LoFit_Client\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "appsettings.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "WasmResource",
+      "AssetTraitValue": "settings",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\appsettings.json"
+    },
+    {
       "Identity": "D:\\Projekty\\LoFit\\LoFit_Server\\obj\\Debug\\net8.0\\scopedcss\\bundle\\LoFit_Server.styles.css",
       "SourceId": "LoFit_Server",
       "SourceType": "Computed",
@@ -7969,6 +7995,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.png"
+    },
+    {
+      "Identity": "D:\\Projekty\\LoFit\\LoFit_Server\\wwwroot\\js\\CookieManager.js",
+      "SourceId": "LoFit_Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Projekty\\LoFit\\LoFit_Server\\wwwroot\\",
+      "BasePath": "_content/LoFit_Server",
+      "RelativePath": "js/CookieManager.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\CookieManager.js"
     }
   ]
 }

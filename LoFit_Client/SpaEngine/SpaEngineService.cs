@@ -4,6 +4,7 @@ using LoFit_Client.SpaEngine.SpaEngineStates;
 using Microsoft.AspNetCore.Components;
 using LoFit_Client.Pages;
 using LoFit_Models.Dtos;
+using LoFit_Models.MockupData;
 
 public class SpaEngineService : ISpaEngineService
 {
@@ -26,8 +27,9 @@ public class SpaEngineService : ISpaEngineService
         this.spaState = newSpaState;
         this.spaState.SetSpaEngineService(this);
     }
-    public void StartTraining()
+    public async Task StartTraining()
     {
+        TrainingSetDtos = await MockupData.MockUpListTrainingsAsync();
         spaState.StartTraining();
     }
 

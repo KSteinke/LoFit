@@ -56,7 +56,6 @@
     protected override void OnInitialized()
     {
         this.LoFitSpaEngine =  new SpaEngineService();
- 
     }
 
     protected override async Task OnInitializedAsync()
@@ -68,7 +67,6 @@
     {
         LoFitSpaEngine.StartTraining();
         //userTrainingsList = await trainingService.ListTrainingsAsync();
-        LoFitSpaEngine.TrainingSetDtos = await MockupData.MockUpListTrainingsAsync();
     }
     public async Task AddNewTrainingSet()
     {

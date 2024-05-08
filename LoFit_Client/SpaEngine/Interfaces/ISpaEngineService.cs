@@ -8,7 +8,7 @@ public interface ISpaEngineService
     IEnumerable<TrainingSetDto> TrainingSetDtos {get; set;}
     void TransitionTo(SpaEngineState newSpaState);
     SpaEngineStatesEnum GetCurrentStateName();
-    void StartTraining();
+    Task StartTraining();
     void AddNewTrainingSet();
     void SaveNewTraining();
     void StartTrainingSet();

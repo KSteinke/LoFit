@@ -8,7 +8,7 @@ using LoFit_Models.MockupData;
 
 public class SpaEngineService : ISpaEngineService
 {
-    private SpaEngineState spaState = null;
+    private SpaEngineState spaState;
     private IEnumerable<TrainingSetDto> trainingSetDtos;
     public IEnumerable<TrainingSetDto> TrainingSetDtos
     {

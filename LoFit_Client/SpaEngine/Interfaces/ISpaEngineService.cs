@@ -10,7 +10,7 @@ public interface ISpaEngineService
     SpaEngineStatesEnum GetCurrentStateName();
     Task StartTraining();
     void AddNewTrainingSet();
-    void SaveNewTraining();
+    Task SaveNewTraining();
     void StartTrainingSet();
     void FinishTraining();
     void ReturnToInit();

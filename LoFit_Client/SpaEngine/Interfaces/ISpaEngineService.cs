@@ -6,12 +6,13 @@ namespace LoFit_Client.SpaEngine.Interfaces;
 public interface ISpaEngineService
 {
     IEnumerable<TrainingSetDto> TrainingSetDtos {get; set;}
+    TrainingSetDetailsDto TrainingSetDetailsDto{get; set;}
     void TransitionTo(SpaEngineState newSpaState);
     SpaEngineStatesEnum GetCurrentStateName();
     Task StartTraining();
     void AddNewTrainingSet();
     Task SaveNewTraining();
-    void StartTrainingSet();
+    Task StartTrainingSet();
     void FinishTraining();
     void ReturnToInit();
 }

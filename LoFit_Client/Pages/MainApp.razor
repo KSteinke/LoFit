@@ -26,7 +26,7 @@
         break;
 
     case SpaEngineStatesEnum.Training:
-        <Training @rendermode="InteractiveAuto" FinishTrainingCallback="LoFitSpaEngine.FinishTraining"/>
+        <Training @rendermode="InteractiveAuto" trainingSetDetailsDto="LoFitSpaEngine.TrainingSetDetailsDto" FinishTrainingCallback="LoFitSpaEngine.FinishTraining"/>
         break;
 
     case SpaEngineStatesEnum.AddTraining:
@@ -42,6 +42,7 @@
 }
 
 @code{
+    
     public ISpaEngineService LoFitSpaEngine = null;
     public bool CookiesAccepted {get; set;}
     [Inject]

@@ -66,4 +66,11 @@ public static class MockupData
 
         return Task.FromResult(mockupTrainingSetDetailsDto);
     }
+
+    public static Task<TrainingSetDto> MockUpTrainingSetDto()
+    {
+        var result = new TrainingSetDto { Id = Guid.NewGuid(), Name = "Added Training Set" };
+        return Task.FromResult(result);
+         
+    }
 }

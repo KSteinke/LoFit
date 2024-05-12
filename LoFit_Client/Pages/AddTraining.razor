@@ -1,5 +1,6 @@
 @page "/AddTraining"
 @using LoFit_Models.Dtos
+@using LoFit_Models.MockupData
 
 <div class="row mb-4">
     <div class="col text-center mx-3">
@@ -68,6 +69,7 @@
     
     private async Task SaveNewTraining()
     {
+        NewTrainingSet = await MockupData.MockUpTrainingSetDto();
         await SaveNewTrainingCallback.InvokeAsync(NewTrainingSet);
     }
-}
+}    

@@ -2089,11 +2089,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "d:\\Projekty\\LoFit\\LoFit_Client\\LoFit_Client.csproj",
+      "projectUniqueName": "D:\\Projekty\\LoFit\\LoFit_Client\\LoFit_Client.csproj",
       "projectName": "LoFit_Client",
-      "projectPath": "d:\\Projekty\\LoFit\\LoFit_Client\\LoFit_Client.csproj",
+      "projectPath": "D:\\Projekty\\LoFit\\LoFit_Client\\LoFit_Client.csproj",
       "packagesPath": "C:\\Users\\kacpe\\.nuget\\packages\\",
-      "outputPath": "d:\\Projekty\\LoFit\\LoFit_Client\\obj\\",
+      "outputPath": "D:\\Projekty\\LoFit\\LoFit_Client\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -2115,8 +2115,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "d:\\Projekty\\LoFit\\LoFit_Models\\LoFit_Models.csproj": {
-              "projectPath": "d:\\Projekty\\LoFit\\LoFit_Models\\LoFit_Models.csproj"
+            "D:\\Projekty\\LoFit\\LoFit_Models\\LoFit_Models.csproj": {
+              "projectPath": "D:\\Projekty\\LoFit\\LoFit_Models\\LoFit_Models.csproj"
             }
           }
         }

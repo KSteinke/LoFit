@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "d:\\Projekty\\LoFit\\LoFit_Server\\LoFit_Server.csproj": {}
+    "D:\\Projekty\\LoFit\\LoFit_Server\\LoFit_Server.csproj": {}
   },
   "projects": {
-    "d:\\Projekty\\LoFit\\LoFit_Client\\LoFit_Client.csproj": {
+    "D:\\Projekty\\LoFit\\LoFit_Client\\LoFit_Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\Projekty\\LoFit\\LoFit_Client\\LoFit_Client.csproj",
+        "projectUniqueName": "D:\\Projekty\\LoFit\\LoFit_Client\\LoFit_Client.csproj",
         "projectName": "LoFit_Client",
-        "projectPath": "d:\\Projekty\\LoFit\\LoFit_Client\\LoFit_Client.csproj",
+        "projectPath": "D:\\Projekty\\LoFit\\LoFit_Client\\LoFit_Client.csproj",
         "packagesPath": "C:\\Users\\kacpe\\.nuget\\packages\\",
-        "outputPath": "d:\\Projekty\\LoFit\\LoFit_Client\\obj\\",
+        "outputPath": "D:\\Projekty\\LoFit\\LoFit_Client\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -33,8 +33,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "d:\\Projekty\\LoFit\\LoFit_Models\\LoFit_Models.csproj": {
-                "projectPath": "d:\\Projekty\\LoFit\\LoFit_Models\\LoFit_Models.csproj"
+              "D:\\Projekty\\LoFit\\LoFit_Models\\LoFit_Models.csproj": {
+                "projectPath": "D:\\Projekty\\LoFit\\LoFit_Models\\LoFit_Models.csproj"
               }
             }
           }
@@ -102,14 +102,14 @@
         }
       }
     },
-    "d:\\Projekty\\LoFit\\LoFit_Models\\LoFit_Models.csproj": {
+    "D:\\Projekty\\LoFit\\LoFit_Models\\LoFit_Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\Projekty\\LoFit\\LoFit_Models\\LoFit_Models.csproj",
+        "projectUniqueName": "D:\\Projekty\\LoFit\\LoFit_Models\\LoFit_Models.csproj",
         "projectName": "LoFit_Models",
-        "projectPath": "d:\\Projekty\\LoFit\\LoFit_Models\\LoFit_Models.csproj",
+        "projectPath": "D:\\Projekty\\LoFit\\LoFit_Models\\LoFit_Models.csproj",
         "packagesPath": "C:\\Users\\kacpe\\.nuget\\packages\\",
-        "outputPath": "d:\\Projekty\\LoFit\\LoFit_Models\\obj\\",
+        "outputPath": "D:\\Projekty\\LoFit\\LoFit_Models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -162,14 +162,14 @@
         }
       }
     },
-    "d:\\Projekty\\LoFit\\LoFit_Server\\LoFit_Server.csproj": {
+    "D:\\Projekty\\LoFit\\LoFit_Server\\LoFit_Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\Projekty\\LoFit\\LoFit_Server\\LoFit_Server.csproj",
+        "projectUniqueName": "D:\\Projekty\\LoFit\\LoFit_Server\\LoFit_Server.csproj",
         "projectName": "LoFit_Server",
-        "projectPath": "d:\\Projekty\\LoFit\\LoFit_Server\\LoFit_Server.csproj",
+        "projectPath": "D:\\Projekty\\LoFit\\LoFit_Server\\LoFit_Server.csproj",
         "packagesPath": "C:\\Users\\kacpe\\.nuget\\packages\\",
-        "outputPath": "d:\\Projekty\\LoFit\\LoFit_Server\\obj\\",
+        "outputPath": "D:\\Projekty\\LoFit\\LoFit_Server\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -191,11 +191,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "d:\\Projekty\\LoFit\\LoFit_Client\\LoFit_Client.csproj": {
-                "projectPath": "d:\\Projekty\\LoFit\\LoFit_Client\\LoFit_Client.csproj"
+              "D:\\Projekty\\LoFit\\LoFit_Client\\LoFit_Client.csproj": {
+                "projectPath": "D:\\Projekty\\LoFit\\LoFit_Client\\LoFit_Client.csproj"
               },
-              "d:\\Projekty\\LoFit\\LoFit_Models\\LoFit_Models.csproj": {
-                "projectPath": "d:\\Projekty\\LoFit\\LoFit_Models\\LoFit_Models.csproj"
+              "D:\\Projekty\\LoFit\\LoFit_Models\\LoFit_Models.csproj": {
+                "projectPath": "D:\\Projekty\\LoFit\\LoFit_Models\\LoFit_Models.csproj"
               }
             }
           }

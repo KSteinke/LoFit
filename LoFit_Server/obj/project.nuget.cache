@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bqQjnOGEoaTZhzl0MmTIVQQ7mdveAugPee+XR6pKJBQCtQ/AovOcAX2XVI0UBf/SJV3ICvTsiTJdEwuFNFLOhw==",
+  "dgSpecHash": "8l018ZRF1JJSw8Opf+paS3A10TXfF6OgXnlcuJCrk7ZIzTkvfC8rnXQ5P8llCfvyAGM49w1RWxm3S6Zz218OYQ==",
   "success": true,
-  "projectFilePath": "d:\\Projekty\\LoFit\\LoFit_Server\\LoFit_Server.csproj",
+  "projectFilePath": "D:\\Projekty\\LoFit\\LoFit_Server\\LoFit_Server.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kacpe\\.nuget\\packages\\microsoft.aspnetcore.authorization\\8.0.3\\microsoft.aspnetcore.authorization.8.0.3.nupkg.sha512",
     "C:\\Users\\kacpe\\.nuget\\packages\\microsoft.aspnetcore.components\\8.0.3\\microsoft.aspnetcore.components.8.0.3.nupkg.sha512",

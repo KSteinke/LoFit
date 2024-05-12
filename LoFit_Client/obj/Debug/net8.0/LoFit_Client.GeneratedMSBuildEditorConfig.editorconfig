@@ -22,34 +22,34 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\Projekty\LoFit\LoFit_Client
 build_property._RazorSourceGeneratorDebug = 
 
-[d:/Projekty/LoFit/LoFit_Client/Pages/AddTraining.razor]
+[D:/Projekty/LoFit/LoFit_Client/Pages/AddTraining.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkVHJhaW5pbmcucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Projekty/LoFit/LoFit_Client/Pages/AppInit.razor]
+[D:/Projekty/LoFit/LoFit_Client/Pages/AppInit.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXBwSW5pdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Projekty/LoFit/LoFit_Client/Pages/Counter.razor]
+[D:/Projekty/LoFit/LoFit_Client/Pages/Counter.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Projekty/LoFit/LoFit_Client/Pages/ListTrainings.razor]
+[D:/Projekty/LoFit/LoFit_Client/Pages/ListTrainings.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGlzdFRyYWluaW5ncy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Projekty/LoFit/LoFit_Client/Pages/MainApp.razor]
+[D:/Projekty/LoFit/LoFit_Client/Pages/MainApp.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFpbkFwcC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Projekty/LoFit/LoFit_Client/Pages/Summary.razor]
+[D:/Projekty/LoFit/LoFit_Client/Pages/Summary.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3VtbWFyeS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Projekty/LoFit/LoFit_Client/Pages/Training.razor]
+[D:/Projekty/LoFit/LoFit_Client/Pages/Training.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVHJhaW5pbmcucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Projekty/LoFit/LoFit_Client/_Imports.razor]
+[D:/Projekty/LoFit/LoFit_Client/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 

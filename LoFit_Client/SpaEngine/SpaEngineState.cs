@@ -21,30 +21,24 @@ public abstract class SpaEngineState
         this.spaEngineService = spaEngineService;
     }   
 
-    public virtual async Task StartTraining()
+    public virtual void StartTraining()
     { 
         /* Empty Default Implementation */ 
-        await Task.CompletedTask;
     }                     
 
     public virtual void AddNewTrainingSet()
     { /* Empty Default Implementation */ }
     
-    public virtual async Task SaveNewTraining(TrainingSetDto newTrainingSetDto)
+    public virtual void SaveNewTraining(TrainingSetDto newTrainingSetDto)
     { 
         /* Empty Default Implementation */
-        await Task.CompletedTask; 
     }
     
-    public virtual async Task StartTrainingSet()
+    public virtual void StartTrainingSet()
+    {  /* Empty Default Implementation */ }
+    public virtual void FinishTraining()
     { 
         /* Empty Default Implementation */ 
-        await Task.CompletedTask;
-    }
-    public virtual async Task FinishTraining(TrainingSetDetailsDto trainingSetDetailsDtoUpdated)
-    { 
-        /* Empty Default Implementation */ 
-        await Task.CompletedTask;
     }
     public virtual void ReturnToInit()
     { /* Empty Default Implementation */ }

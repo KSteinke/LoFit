@@ -139,7 +139,7 @@
     public async Task FinishTraining()
     {
         StopAndResetTimer();        //Check if needed, possible repetition.
-        await FinishTrainingCallback.InvokeAsync(updatedTrainingSetDetailsDto);
+        await FinishTrainingCallback.InvokeAsync();
     }
 
     protected override void OnInitialized()
@@ -184,7 +184,5 @@
         timerEnabled = false;
         InvokeAsync(StateHasChanged); // Refresh user interface
     }
-
-   
 
 }

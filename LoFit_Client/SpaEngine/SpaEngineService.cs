@@ -25,9 +25,9 @@ public class SpaEngineService : ISpaEngineService
         this.spaState = newSpaState;
         this.spaState.SetSpaEngineService(this);
     }
-    public async Task StartTraining()
+    public void StartTraining()
     {
-        await spaState.StartTraining();
+        spaState.StartTraining();
     }
 
     public void AddNewTrainingSet()
@@ -35,19 +35,19 @@ public class SpaEngineService : ISpaEngineService
         spaState.AddNewTrainingSet();
     }
 
-    public async Task SaveNewTraining(TrainingSetDto newTrainingSetDto)
+    public void SaveNewTraining(TrainingSetDto newTrainingSetDto)
     {
-        await spaState.SaveNewTraining(newTrainingSetDto);
+        spaState.SaveNewTraining(newTrainingSetDto);
     }
 
-    public async Task StartTrainingSet()
+    public void StartTrainingSet()
     {
-        await spaState.StartTrainingSet();
+        spaState.StartTrainingSet();
     }
 
-    public async Task FinishTraining(TrainingSetDetailsDto trainingSetDetailsDtoUpdated)
+    public void FinishTraining()
     {
-        await spaState.FinishTraining(trainingSetDetailsDtoUpdated);
+        spaState.FinishTraining();
     }
 
     public void ReturnToInit()

@@ -43,12 +43,12 @@
 
 @code{
     
-    public ISpaEngineService? LoFitSpaEngine = null;
+    public ISpaEngineService LoFitSpaEngine = null;
     public bool CookiesAccepted {get; set;}
     [Inject]
-    public ICookieManager? CookieManager {get; set;}
+    public ICookieManager CookieManager {get; set;}
     [Inject]
-    public IConfiguration? Configuration {get; set;}
+    public IConfiguration Configuration {get; set;}
 
     //[Inject]
     //public ITrainingService trainingService {get; set;}

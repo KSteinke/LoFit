@@ -9,11 +9,11 @@ public class TrainingSpaEngineState:SpaEngineState
         SpaEngineStateName = SpaEngineStatesEnum.Training;
     }
 
-    public override async Task FinishTraining(TrainingSetDetailsDto trainingSetDetailsDtoUpdated)
+    public override void FinishTraining()
     {
         //TODO - POST action to store updated data
-        this.spaEngineService.TrainingSetDetailsDtoUpdated = trainingSetDetailsDtoUpdated;
+        this.spaEngineService.TrainingSetDetailsDtoUpdated = new TrainingSetDetailsDto();
         this.spaEngineService.TransitionTo(new SummarySpaEngineState());
-        await Task.CompletedTask;
+
     }
 }

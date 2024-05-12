@@ -8,11 +8,10 @@ public class InitSpaEngineState : SpaEngineState
     {
         SpaEngineStateName = SpaEngineStatesEnum.Init;
     }
-    public override async Task StartTraining()
+    public override void StartTraining()
     {
-        this.spaEngineService.TrainingSetDtos = await MockupData.MockUpListTrainingsAsync();
+        //this.spaEngineService.TrainingSetDtos = await MockupData.MockUpListTrainingsAsync();
         this.spaEngineService.TransitionTo(new ListTrainingsSpaEngineState());
-        await Task.CompletedTask;
     }
     
 }

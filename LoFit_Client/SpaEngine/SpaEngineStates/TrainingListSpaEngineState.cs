@@ -14,9 +14,9 @@ public class ListTrainingsSpaEngineState : SpaEngineState
         this.spaEngineService.TransitionTo(new AddTrainingSpaEngineState());
     }
 
-    public override async Task StartTrainingSet()
+    public override void StartTrainingSet()
     {
-        this.spaEngineService.TrainingSetDetailsDto = await MockupData.GetTrainingSetDetailsDto();
+        //this.spaEngineService.TrainingSetDetailsDto = await MockupData.GetTrainingSetDetailsDto();
         this.spaEngineService.TransitionTo(new TrainingSpaEngineState());
     }
 }

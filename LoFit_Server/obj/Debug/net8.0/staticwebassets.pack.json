@@ -1,27 +1,27 @@
 {
   "Files": [
     {
-      "Id": "D:\\Projekty\\LoFit\\LoFit_Server\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\LoFit_Server.bundle.scp.css",
+      "Id": "d:\\Projekty\\LoFit\\LoFit_Server\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\LoFit_Server.bundle.scp.css",
       "PackagePath": "staticwebassets\\LoFit_Server.bundle.scp.css"
     },
     {
-      "Id": "D:\\Projekty\\LoFit\\LoFit_Server\\wwwroot\\app.css",
+      "Id": "d:\\Projekty\\LoFit\\LoFit_Server\\wwwroot\\app.css",
       "PackagePath": "staticwebassets\\app.css"
     },
     {
-      "Id": "D:\\Projekty\\LoFit\\LoFit_Server\\wwwroot\\bootstrap\\arrow-up-circle-fill.svg",
+      "Id": "d:\\Projekty\\LoFit\\LoFit_Server\\wwwroot\\bootstrap\\arrow-up-circle-fill.svg",
       "PackagePath": "staticwebassets\\bootstrap\\arrow-up-circle-fill.svg"
     },
     {
-      "Id": "D:\\Projekty\\LoFit\\LoFit_Server\\wwwroot\\bootstrap\\bootstrap.css",
+      "Id": "d:\\Projekty\\LoFit\\LoFit_Server\\wwwroot\\bootstrap\\bootstrap.css",
       "PackagePath": "staticwebassets\\bootstrap\\bootstrap.css"
     },
     {
-      "Id": "D:\\Projekty\\LoFit\\LoFit_Server\\wwwroot\\favicon.png",
+      "Id": "d:\\Projekty\\LoFit\\LoFit_Server\\wwwroot\\favicon.png",
       "PackagePath": "staticwebassets\\favicon.png"
     },
     {
-      "Id": "D:\\Projekty\\LoFit\\LoFit_Server\\wwwroot\\js\\CookieManager.js",
+      "Id": "d:\\Projekty\\LoFit\\LoFit_Server\\wwwroot\\js\\CookieManager.js",
       "PackagePath": "staticwebassets\\js\\CookieManager.js"
     },
     {

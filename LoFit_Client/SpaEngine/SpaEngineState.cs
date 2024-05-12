@@ -41,7 +41,7 @@ public abstract class SpaEngineState
         /* Empty Default Implementation */ 
         await Task.CompletedTask;
     }
-    public virtual async Task FinishTraining()
+    public virtual async Task FinishTraining(TrainingSetDetailsDto trainingSetDetailsDtoUpdated)
     { 
         /* Empty Default Implementation */ 
         await Task.CompletedTask;

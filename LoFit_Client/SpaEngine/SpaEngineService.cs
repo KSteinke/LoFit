@@ -1,10 +1,8 @@
 namespace LoFit_Client.SpaEngine;
 using LoFit_Client.SpaEngine.Interfaces;
 using LoFit_Client.SpaEngine.SpaEngineStates;
-using Microsoft.AspNetCore.Components;
-using LoFit_Client.Pages;
 using LoFit_Models.Dtos;
-using LoFit_Models.MockupData;
+
 
 public class SpaEngineService : ISpaEngineService
 {
@@ -47,9 +45,9 @@ public class SpaEngineService : ISpaEngineService
         await spaState.StartTrainingSet();
     }
 
-    public async Task FinishTraining()
+    public async Task FinishTraining(TrainingSetDetailsDto trainingSetDetailsDtoUpdated)
     {
-        await spaState.FinishTraining();
+        await spaState.FinishTraining(trainingSetDetailsDtoUpdated);
     }
 
     public void ReturnToInit()

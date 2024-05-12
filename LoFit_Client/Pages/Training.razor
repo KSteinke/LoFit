@@ -101,13 +101,13 @@
 
 @code{
     
-    public TrainingSetDetailsDto? updatedTrainingSetDetailsDto {get; set;}
+    public TrainingSetDetailsDto updatedTrainingSetDetailsDto {get; set;}
 
     [Parameter]
     public TrainingSetDetailsDto? trainingSetDetailsDto {get; set;}
 
     [Parameter]
-    public EventCallback FinishTrainingCallback {get; set;}
+    public EventCallback<TrainingSetDetailsDto> FinishTrainingCallback {get; set;}
 
     public int ExerciseCounter = 0; 
 
@@ -138,8 +138,8 @@
 
     public async Task FinishTraining()
     {
-        StopAndResetTimer();
-        await FinishTrainingCallback.InvokeAsync();
+        StopAndResetTimer();        //Check if needed, possible repetition.
+        await FinishTrainingCallback.InvokeAsync(updatedTrainingSetDetailsDto);
     }
 
     protected override void OnInitialized()
@@ -147,7 +147,6 @@
         base.OnInitialized();
         StartTimer();
         updatedTrainingSetDetailsDto = trainingSetDetailsDto;
-        Console.WriteLine(updatedTrainingSetDetailsDto.ToString());
     }
 
     private void StartTimer()

@@ -12,6 +12,7 @@ public class InitSpaEngineState : SpaEngineState
     {
         this.spaEngineService.TrainingSetDtos = await MockupData.MockUpListTrainingsAsync();
         this.spaEngineService.TransitionTo(new ListTrainingsSpaEngineState());
+        await Task.CompletedTask;
     }
     
 }

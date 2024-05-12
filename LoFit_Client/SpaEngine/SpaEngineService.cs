@@ -38,10 +38,9 @@ public class SpaEngineService : ISpaEngineService
         spaState.AddNewTrainingSet();
     }
 
-    public async Task SaveNewTraining()
+    public async Task SaveNewTraining(TrainingSetDto newTrainingSetDto)
     {
-        spaState.SaveNewTraining();
-        this.TrainingSetDtos = await MockupData.MockUpListTrainingsAsync();
+        spaState.SaveNewTraining(newTrainingSetDto);
     }
 
     public async Task StartTrainingSet()

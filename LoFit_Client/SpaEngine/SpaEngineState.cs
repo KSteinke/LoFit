@@ -2,6 +2,7 @@ using LoFit_Client.SpaEngine.Interfaces;
 using Microsoft.AspNetCore.Components;
 using LoFit_Client.Pages;
 using LoFit_Client.SpaEngine.SpaEngineStates;
+using LoFit_Models.Dtos;
 
 
 namespace LoFit_Client.SpaEngine;
@@ -26,7 +27,7 @@ public abstract class SpaEngineState
     public virtual void AddNewTrainingSet()
     { /* Empty Default Implementation */ }
     
-    public virtual void SaveNewTraining()
+    public virtual void SaveNewTraining(TrainingSetDto newTrainingSetDto)
     { /* Empty Default Implementation */ }
     
     public virtual void StartTrainingSet()

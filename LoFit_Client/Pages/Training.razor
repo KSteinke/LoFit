@@ -101,13 +101,13 @@
 
 @code{
     
-    public TrainingSetDetailsDto updatedTrainingSetDetailsDto {get; set;}
+    public TrainingSetDetailsDto? updatedTrainingSetDetailsDto {get; set;}
 
     [Parameter]
     public TrainingSetDetailsDto? trainingSetDetailsDto {get; set;}
 
     [Parameter]
-    public EventCallback<TrainingSetDetailsDto> FinishTrainingCallback {get; set;}
+    public EventCallback FinishTrainingCallback {get; set;}
 
     public int ExerciseCounter = 0; 
 

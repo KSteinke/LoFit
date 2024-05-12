@@ -16,6 +16,7 @@ public class SpaEngineService : ISpaEngineService
         set { this.trainingSetDtos = value;}
     }
     public TrainingSetDetailsDto TrainingSetDetailsDto{get; set;}
+    public TrainingSetDetailsDto TrainingSetDetailsDtoUpdated {get; set;}
     
     public SpaEngineService()
     {
@@ -46,7 +47,6 @@ public class SpaEngineService : ISpaEngineService
     public async Task StartTrainingSet()
     {
         this.TrainingSetDetailsDto = await MockupData.GetTrainingSetDetailsDto();
-        Console.WriteLine(this.TrainingSetDetailsDto.ToString());
         spaState.StartTrainingSet();
     }
 

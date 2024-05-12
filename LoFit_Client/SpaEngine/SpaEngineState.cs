@@ -9,7 +9,7 @@ namespace LoFit_Client.SpaEngine;
 
 public abstract class SpaEngineState
 {
-    protected ISpaEngineService spaEngineService;
+    protected ISpaEngineService spaEngineService = new SpaEngineService();
     public SpaEngineStatesEnum spaEngineStateName;
     public SpaEngineStatesEnum SpaEngineStateName 
     {

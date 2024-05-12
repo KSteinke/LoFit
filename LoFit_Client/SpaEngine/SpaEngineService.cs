@@ -12,8 +12,8 @@ public class SpaEngineService : ISpaEngineService
     private IEnumerable<TrainingSetDto> trainingSetDtos;
     public IEnumerable<TrainingSetDto> TrainingSetDtos
     {
-        get { return this.trainingSetDtos;}
-        set { this.trainingSetDtos = value;}
+        get { return this.trainingSetDtos; }
+        set { this.trainingSetDtos = value; }
     }
     public TrainingSetDetailsDto TrainingSetDetailsDto{get; set;}
     public TrainingSetDetailsDto TrainingSetDetailsDtoUpdated {get; set;}
@@ -29,8 +29,7 @@ public class SpaEngineService : ISpaEngineService
     }
     public async Task StartTraining()
     {
-        this.TrainingSetDtos = await MockupData.MockUpListTrainingsAsync();
-        spaState.StartTraining();
+        await spaState.StartTraining();
     }
 
     public void AddNewTrainingSet()
@@ -40,18 +39,17 @@ public class SpaEngineService : ISpaEngineService
 
     public async Task SaveNewTraining(TrainingSetDto newTrainingSetDto)
     {
-        spaState.SaveNewTraining(newTrainingSetDto);
+        await spaState.SaveNewTraining(newTrainingSetDto);
     }
 
     public async Task StartTrainingSet()
     {
-        this.TrainingSetDetailsDto = await MockupData.GetTrainingSetDetailsDto();
-        spaState.StartTrainingSet();
+        await spaState.StartTrainingSet();
     }
 
-    public void FinishTraining()
+    public async Task FinishTraining()
     {
-        spaState.FinishTraining();
+        await spaState.FinishTraining();
     }
 
     public void ReturnToInit()

@@ -9,15 +9,17 @@ public class AddTrainingSpaEngineState:SpaEngineState
         SpaEngineStateName = SpaEngineStatesEnum.AddTraining;
     }
 
-    public override void SaveNewTraining(TrainingSetDto newTrainingSetDto)
+    public override async Task SaveNewTraining(TrainingSetDto newTrainingSetDto)
     {
-        //TODO - Add response validation and coherency check
+        //TODO - Add patch operation with new item response validation and coherency check
         //Get current List of training sets, add new item to list, update List of training sets.
         var currTrainingSetDtos = this.spaEngineService.TrainingSetDtos;
         List<TrainingSetDto> newTrainingSetDtosList = currTrainingSetDtos.ToList();
         newTrainingSetDtosList.Add(newTrainingSetDto);
         this.spaEngineService.TrainingSetDtos = newTrainingSetDtosList;
+        
 
         this.spaEngineService.TransitionTo(new ListTrainingsSpaEngineState());
+        await Task.CompletedTask;
     }
 }

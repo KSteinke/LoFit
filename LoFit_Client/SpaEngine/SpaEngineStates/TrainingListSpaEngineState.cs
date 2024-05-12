@@ -1,3 +1,5 @@
+using LoFit_Models.MockupData;
+
 namespace LoFit_Client.SpaEngine.SpaEngineStates;
 
 public class ListTrainingsSpaEngineState : SpaEngineState
@@ -12,8 +14,9 @@ public class ListTrainingsSpaEngineState : SpaEngineState
         this.spaEngineService.TransitionTo(new AddTrainingSpaEngineState());
     }
 
-    public override void StartTrainingSet()
+    public override async Task StartTrainingSet()
     {
+        this.spaEngineService.TrainingSetDetailsDto = await MockupData.GetTrainingSetDetailsDto();
         this.spaEngineService.TransitionTo(new TrainingSpaEngineState());
     }
 }

@@ -13,6 +13,6 @@ public interface ISpaEngineService
     void AddNewTrainingSet();
     Task SaveNewTraining(TrainingSetDto newTrainingSetDto);
     Task StartTrainingSet();
-    void FinishTraining();
+    Task FinishTraining();
     void ReturnToInit();
 }

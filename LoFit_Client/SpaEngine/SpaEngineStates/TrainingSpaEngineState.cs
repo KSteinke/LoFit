@@ -7,8 +7,9 @@ public class TrainingSpaEngineState:SpaEngineState
         SpaEngineStateName = SpaEngineStatesEnum.Training;
     }
 
-    public override void FinishTraining()
+    public override async Task FinishTraining()
     {
         this.spaEngineService.TransitionTo(new SummarySpaEngineState());
+        await Task.CompletedTask;
     }
 }

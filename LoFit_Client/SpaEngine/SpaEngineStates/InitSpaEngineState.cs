@@ -1,3 +1,5 @@
+using LoFit_Models.MockupData;
+
 namespace LoFit_Client.SpaEngine.SpaEngineStates;
 
 public class InitSpaEngineState : SpaEngineState
@@ -6,8 +8,9 @@ public class InitSpaEngineState : SpaEngineState
     {
         SpaEngineStateName = SpaEngineStatesEnum.Init;
     }
-    public override void StartTraining()
+    public override async Task StartTraining()
     {
+        this.spaEngineService.TrainingSetDtos = await MockupData.MockUpListTrainingsAsync();
         this.spaEngineService.TransitionTo(new ListTrainingsSpaEngineState());
     }
     

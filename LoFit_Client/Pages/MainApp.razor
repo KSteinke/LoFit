@@ -22,7 +22,7 @@
         break;
 
     case SpaEngineStatesEnum.ListTrainings:
-        <ListTrainings @rendermode="InteractiveAuto" userTrainingsList="LoFitSpaEngine.TrainingSetDtos" StartTrainingSetCallback="LoFitSpaEngine.StartTrainingSet"  AddNewTrainingSetCallback="LoFitSpaEngine.AddNewTrainingSet"/>
+        <ListTrainings @rendermode="InteractiveAuto" StartTrainingSetCallback="LoFitSpaEngine.StartTrainingSet"  AddNewTrainingSetCallback="LoFitSpaEngine.AddNewTrainingSet"/>
         break;
 
     case SpaEngineStatesEnum.Training:
@@ -43,7 +43,7 @@
 
 @code{
     
-    public ISpaEngineService LoFitSpaEngine = null;
+    public ISpaEngineService LoFitSpaEngine {get; set;}
     public bool CookiesAccepted {get; set;}
     [Inject]
     public ICookieManager CookieManager {get; set;}

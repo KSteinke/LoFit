@@ -9,10 +9,10 @@ public interface ISpaEngineService
     TrainingSetDetailsDto TrainingSetDetailsDto{get; set;}
     void TransitionTo(SpaEngineState newSpaState);
     SpaEngineStatesEnum GetCurrentStateName();
-    Task StartTraining();
+    void StartTraining();
     void AddNewTrainingSet();
-    Task SaveNewTraining(TrainingSetDto newTrainingSetDto);
-    Task StartTrainingSet();
+    void SaveNewTraining();
+    void StartTrainingSet();
     void FinishTraining();
     void ReturnToInit();
 }

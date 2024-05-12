@@ -27,7 +27,7 @@ public abstract class SpaEngineState
     public virtual void AddNewTrainingSet()
     { /* Empty Default Implementation */ }
     
-    public virtual void SaveNewTraining(TrainingSetDto newTrainingSetDto)
+    public virtual void SaveNewTraining()
     { /* Empty Default Implementation */ }
     
     public virtual void StartTrainingSet()

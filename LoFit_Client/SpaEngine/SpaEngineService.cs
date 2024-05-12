@@ -27,9 +27,9 @@ public class SpaEngineService : ISpaEngineService
         this.spaState = newSpaState;
         this.spaState.SetSpaEngineService(this);
     }
-    public async Task StartTraining()
+    public void StartTraining()
     {
-        this.TrainingSetDtos = await MockupData.MockUpListTrainingsAsync();
+        //this.TrainingSetDtos = await MockupData.MockUpListTrainingsAsync();
         spaState.StartTraining();
     }
 
@@ -38,14 +38,13 @@ public class SpaEngineService : ISpaEngineService
         spaState.AddNewTrainingSet();
     }
 
-    public async Task SaveNewTraining(TrainingSetDto newTrainingSetDto)
+    public void SaveNewTraining()
     {
-        spaState.SaveNewTraining(newTrainingSetDto);
+        spaState.SaveNewTraining();
     }
 
-    public async Task StartTrainingSet()
+    public void StartTrainingSet()
     {
-        this.TrainingSetDetailsDto = await MockupData.GetTrainingSetDetailsDto();
         spaState.StartTrainingSet();
     }
 

@@ -5,8 +5,10 @@
 *.pdb
 *.exe
 LoFit_Server/bin/*
-LoFit_Server/obj
-LoFit_Client/obj
-LoFit_Client/obj/Debug
+LoFit_Server/obj/*
+LoFit_Client/obj/*
+LoFit_Client/obj/Debug/*
 LoFit_Client/bin/*
+LoFit_Models/bin/*
+LoFit_Models/obj/*
 .vscode

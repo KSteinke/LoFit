@@ -18,5 +18,3 @@ LoFit_Models/obj/*
 LoFit_Models/obj/Debug/*
 LoFit_Models/obj/Debug/net8.0/*
 .vscode
-LoFit_Server\obj\Debug\net8.0\ref\*
-LoFit_Models\obj\Debug\net8.0\ref\*

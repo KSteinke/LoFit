@@ -1,4 +1,5 @@
 @page "/Training"
+@using LoFit_Models.Dtos
 
 <div class="row mb-4 justify-content-center">
     <div class="col text-center mx-3 w-100">
@@ -8,74 +9,195 @@
         </div>
     </div>
 </div>
-<div class="row mb-4">
-    <div class="col text-center mx-3">
-        <h3 class="text-dark  fw-bolder">Training step:</h3>
-    </div>
-    <div class="col text-center mx-3">
-        <h1 class="text-dark fw-bolder">3 of 10</h1>
-    </div>
-</div>
 
-<div class="row mb-4 mx-3 justify-content-center">
-    <div class="col text-center border border-3 border-dark rounded-5">
-        <div class="row my-2">
-            <h1 class="text-dark fw-bolder">Squat with weight</h1>
+@if((NewTrainingSetDetailsDto != null) && (ExerciseCounter >= 0) && (ExerciseCounter < NewTrainingSetDetailsDto.ExerciseDetailsDtos.Count()))
+{
+    <div class="row mb-4">
+        <div class="col text-center mx-3">
+            <h3 class="text-dark  fw-bolder">Training step:</h3>
         </div>
-        <div class="row my-2 align-items-center">
-            <div class="col-6">
-                <h3 class="text-dark text-start">Weight:</h3>
+        <div class="col text-center mx-3">
+            <h1 class="text-dark fw-bolder">@(ExerciseCounter+1) of @(NewTrainingSetDetailsDto.ExerciseDetailsDtos.Count())</h1>
+        </div>
+    </div>
+
+    <div class="row mb-4 mx-3 justify-content-center">
+        <div class="col text-center border border-3 border-dark rounded-5">
+            <div class="row my-2">
+                <h1 class="text-dark fw-bolder">@NewTrainingSetDetailsDto.ExerciseDetailsDtos[ExerciseCounter].Name</h1>
             </div>
-            <div class="col-6">
-                <div>
-                    <select class="form-select rounded-5 border border-3 border-dark" id="exampleSelect1">
-                        @for(int i=1; i<101; i++)
-                        {
-                            <option class="text-dark">@i kg</option>
-                        }
-                    </select>
+            <div class="row my-2 align-items-center">
+                <div class="col-6">
+                    <h3 class="text-dark text-start">Weight:</h3>
+                </div>
+                <div class="col-6">
+                    <div>
+                        <select class="form-select rounded-5 border border-3 border-dark" id="exampleSelect1" @bind="NewTrainingSetDetailsDto.ExerciseDetailsDtos[ExerciseCounter].PrevWeight">
+                            @for (int j = 1; j < 101; j++)
+                            {
+                                <option class="text-dark" value="@j">@j kg</option>
+                            }
+                        </select>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row my-2 align-items-center">
-            <div class="col-6">
-                <h3 class="text-dark text-start">Repetitions:</h3>
-            </div>
-            <div class="col-6">
-                <div>
-                    <select class="form-select rounded-5 border border-3 border-dark" id="exampleSelect1">
-                        @for(int i=1; i<50; i++)
-                        {
-                            <option class="text-dark">@i</option>
-                        }
-                    </select>
+            <div class="row my-2 align-items-center">
+                <div class="col-6">
+                    <h3 class="text-dark text-start">Repetitions:</h3>
+                </div>
+                <div class="col-6">
+                    <div>
+                        <select class="form-select rounded-5 border border-3 border-dark" id="exampleSelect2" @bind = "NewTrainingSetDetailsDto.ExerciseDetailsDtos[ExerciseCounter].PrevRepetitions">
+                            @for(int i=1; i<50; i++)
+                            {
+                                <option class="text-dark" value="@i">@i</option>
+                            }
+                        </select>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row my-3 align-items-center justify-content-center">
-            <button type="button" class="btn btn-success w-75 text-dark fs-5 fw-bolder border border-3 border-dark" @onclick = "FinishTrainingCallback">Start</button>
-        </div>
-        <div class="row my-3 align-items-center justify-content-center">
-            <h2 class="text-dark fw-bolder">Time: 00:00</h2>
+            @if(timerEnabled == false)
+            {
+                <div class="row my-3 align-items-center justify-content-center">
+                    <button type="button" class="btn btn-success w-75 text-dark fs-5 fw-bolder border border-3 border-dark" @onclick = "ToggleTimer">Start</button>
+                </div>
+            }
+            else{
+                <div class="row my-3 align-items-center justify-content-center">
+                    <button type="button" class="btn btn-success w-75 text-dark fs-5 fw-bolder border border-3 border-dark" @onclick = "ToggleTimer">Pause</button>
+                </div>
+            }
+            
+            <div class="row my-3 align-items-center justify-content-center">
+                <h2 class="text-dark fw-bolder">Time: @currentTime</h2>
+            </div>
         </div>
     </div>
-</div>
+}
 
+<!-- Prevoius/Next Button Section -->
 <div class="row mb-4 mx-3 justify-content-center">
     <div class="col text-center mx-3">
         <div class="btn-group border border-3 border-dark" role="group" aria-label="Basic checkbox toggle button group">
             <button type="button" class="btn btn-warning w-100 text-warning fs-5 fw-bolder border-end border-1 border-dark" id="btncheck1" autocomplete="off">Previous</button>
-            <button type="button" class="btn btn-danger w-100 text-danger fs-5 fw-bolder border-start border-1 border-dark" id="btncheck2" autocomplete="off">Next</button>
+            <button type="button" class="btn btn-success w-100 text-success fs-5 fw-bolder border-start border-1 border-dark" id="btncheck2" autocomplete="off" @onclick = "NextExercise">Next</button>
         </div>
     </div>
 </div>
 
 @code{
+    [Inject]
+    public ITrainingService TrainingService {get; set;}
     [Parameter]
-    public EventCallback FinishTrainingCallback {get; set;}
+    public TrainingSetDto TrainingSetDto {get; set;}
+
+    public TrainingSetDetailsDto? PrevTrainingSetDetailsDto {get; set;}
+   
+    public TrainingSetDetailsDto? NewTrainingSetDetailsDto {get; set;}
+
+    protected override async Task OnInitializedAsync()
+    {
+        PrevTrainingSetDetailsDto = await TrainingService.GetTrainingSetDetailsAsync(TrainingSetDto.Id);
+        NewTrainingSetDetailsDto = PrevTrainingSetDetailsDto.DeepClone();
+        await PrevTrainingSetDetailsDtoChanged();
+        await InvokeAsync(StateHasChanged);
+
+        foreach(var x in NewTrainingSetDetailsDto.ExerciseDetailsDtos)
+        {
+            Console.WriteLine(x.Name + " " + x.PrevWeight + "kg " + "Repets:" + x.PrevRepetitions + "Time:" + x.PrevExerciseTime);
+        }
+        Console.WriteLine("-------------------------");
+       
+    }
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        StartTimer();
+    }
+
+
+    [Parameter]
+    public EventCallback<TrainingSetDetailsDto> SetPrevTrainingSetDetailsDto {get; set;}
+    [Parameter]
+    public EventCallback<TrainingSetDetailsDto> FinishTrainingCallback {get; set;}
+
+    public int ExerciseCounter = 0; 
+
+    private TimeSpan elapsedTime = TimeSpan.Zero;
+    private string currentTime = "00:00";
+    private System.Timers.Timer? timer;
+    private bool timerEnabled = false;
+
+    public async Task NextExercise()
+    {
+        if(ExerciseCounter < NewTrainingSetDetailsDto.ExerciseDetailsDtos.Count()-1)
+        {
+            NewTrainingSetDetailsDto.ExerciseDetailsDtos[ExerciseCounter].PrevExerciseTime = elapsedTime;
+            timerEnabled = false;
+            StopAndResetTimer();
+            StartTimer();
+            ExerciseCounter +=1;
+            await InvokeAsync(StateHasChanged);
+        }
+        else
+        {
+            NewTrainingSetDetailsDto.ExerciseDetailsDtos[ExerciseCounter].PrevExerciseTime = elapsedTime;
+            timerEnabled = false;
+            StopAndResetTimer();
+            await FinishTraining();
+        }
+    }
+
+    public async Task PrevTrainingSetDetailsDtoChanged()
+    {
+        await SetPrevTrainingSetDetailsDto.InvokeAsync(PrevTrainingSetDetailsDto);
+    }
 
     public async Task FinishTraining()
     {
-        await FinishTrainingCallback.InvokeAsync();
+        StopAndResetTimer();
+        await FinishTrainingCallback.InvokeAsync(NewTrainingSetDetailsDto);
     }
+
+    
+
+    private void StartTimer()
+    {
+        timer = new System.Timers.Timer(1000); // Timer refreshes every 1000ms.
+        timer.Elapsed += RefreshTime;
+        timer.Start();
+    }
+
+    private void RefreshTime(object sender, System.Timers.ElapsedEventArgs e)
+    {
+        if (timerEnabled)
+        {
+            this.elapsedTime = elapsedTime.Add(TimeSpan.FromSeconds(1));
+            this.currentTime = $"{(int)elapsedTime.TotalMinutes:00}:{elapsedTime.Seconds:00}";
+            InvokeAsync(StateHasChanged); // Refresh user interface
+        }
+    }
+
+    private void ToggleTimer()
+    {
+        timerEnabled = !timerEnabled;
+    }
+
+    private void StopAndResetTimer()
+    {
+        if (timer != null)
+        {
+            timer.Stop();
+            timer.Dispose();
+            timer = null;
+        }
+        elapsedTime = TimeSpan.Zero;
+        currentTime = "00:00";
+        timerEnabled = false;
+        InvokeAsync(StateHasChanged); // Refresh user interface
+    }
+
+   
+
 }

@@ -4,16 +4,17 @@ using LoFit_Client.SpaEngine.SpaEngineStates;
 using Microsoft.AspNetCore.Components;
 using LoFit_Client.Pages;
 using LoFit_Models.Dtos;
+using LoFit_Models.MockupData;
 
 public class SpaEngineService : ISpaEngineService
 {
-    private SpaEngineState spaState = null;
-    private List<TrainingSetDto> trainingSetDtos;
-    public List<TrainingSetDto> TrainingSetDtos
-    {
-        get { return this.trainingSetDtos;}
-        set { this.trainingSetDtos = value;}
-    }
+    private SpaEngineState spaState;
+    public TrainingSetDto TrainingSetDto { get; set; }
+
+
+    public TrainingSetDetailsDto PrevTrainingSetDetailsDto{get; set;}
+    public TrainingSetDetailsDto NewTrainingSetDetailsDto {get; set;}
+
 
     
     public SpaEngineService()
@@ -40,14 +41,19 @@ public class SpaEngineService : ISpaEngineService
         spaState.SaveNewTraining();
     }
 
-    public void StartTrainingSet()
+    public void StartTrainingSet(TrainingSetDto trainingDto)
     {
-        spaState.StartTrainingSet();
+        spaState.StartTrainingSet(trainingDto);
     }
 
-    public void FinishTraining()
+    public void SetPrevTrainingSetDetailsDto(TrainingSetDetailsDto prevTrainingSetDetailsDto)
     {
-        spaState.FinishTraining();
+        spaState.SetPrevTrainingSetDetailsDto(prevTrainingSetDetailsDto);
+    }
+
+    public void FinishTraining(TrainingSetDetailsDto newTrainingSetDetailsDto)
+    {
+        spaState.FinishTraining(newTrainingSetDetailsDto);
     }
 
     public void ReturnToInit()

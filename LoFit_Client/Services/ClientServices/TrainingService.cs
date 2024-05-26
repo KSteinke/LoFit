@@ -4,6 +4,7 @@ using System.Net;
 using System.Net.Http.Json;
 using LoFit_Client.Services.ClientServices.Interfaces;
 using LoFit_Models.Dtos;
+using LoFit_Models.MockupData;
 
 public class TrainingService:ITrainingService
 {
@@ -15,6 +16,8 @@ public class TrainingService:ITrainingService
 
     public async Task<IEnumerable<TrainingSetDto>> ListTrainingsAsync()
     {
+        return await MockupData.MockUpListTrainingsAsync();
+        /*
         try
         {
             var responese = await this.httpClient.GetAsync($"api/v1/Trainings/ListTrainings");
@@ -46,5 +49,11 @@ public class TrainingService:ITrainingService
         {
             throw;
         }
+        */
+    }
+    
+    public async Task<TrainingSetDetailsDto> GetTrainingSetDetailsAsync(Guid trainingSetDto)
+    {
+        return  await MockupData.GetTrainingSetDetailsDto();
     }
 }

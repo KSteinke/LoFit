@@ -1,3 +1,5 @@
+using LoFit_Models.Dtos;
+
 namespace LoFit_Client.SpaEngine.SpaEngineStates;
 
 public class AddTrainingSpaEngineState:SpaEngineState

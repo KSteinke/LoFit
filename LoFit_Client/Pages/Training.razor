@@ -149,11 +149,13 @@
         }
     }
 
+    /* Passes Last Training Details into state machnie */
     public async Task PrevTrainingSetDetailsDtoChanged()
     {
         await SetPrevTrainingSetDetailsDto.InvokeAsync(PrevTrainingSetDetailsDto);
     }
 
+    /* Ends training and passes newest Training Details into state machnie */
     public async Task FinishTraining()
     {
         StopAndResetTimer();

@@ -52,7 +52,7 @@ public class TrainingService:ITrainingService
         */
     }
     
-    public async Task<TrainingSetDetailsDto> GetTrainingSetDetailsAsync(TrainingSetDto trainingSetDto)
+    public async Task<TrainingSetDetailsDto> GetTrainingSetDetailsAsync(Guid trainingSetDto)
     {
         return  await MockupData.GetTrainingSetDetailsDto();
     }

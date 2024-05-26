@@ -1,3 +1,5 @@
+using LoFit_Models.Dtos;
+
 namespace LoFit_Client.SpaEngine.SpaEngineStates;
 
 public class ListTrainingsSpaEngineState : SpaEngineState
@@ -12,8 +14,10 @@ public class ListTrainingsSpaEngineState : SpaEngineState
         this.spaEngineService.TransitionTo(new AddTrainingSpaEngineState());
     }
 
-    public override void StartTrainingSet()
+    public override void StartTrainingSet(TrainingSetDto trainingDto)
     {
+        //TODO - add null handling
+        this.spaEngineService.TrainingSetDto = trainingDto;
         this.spaEngineService.TransitionTo(new TrainingSpaEngineState());
     }
 }

@@ -26,7 +26,7 @@
         break;
 
     case SpaEngineStatesEnum.Training:
-        <Training @rendermode="InteractiveAuto" trainingSetDetailsDto="LoFitSpaEngine.TrainingSetDetailsDto" FinishTrainingCallback="LoFitSpaEngine.FinishTraining"/>
+        <Training @rendermode="InteractiveAuto" TrainingSetDto="LoFitSpaEngine.TrainingSetDto" FinishTrainingCallback="LoFitSpaEngine.FinishTraining" SetPrevTrainingSetDetailsDto="LoFitSpaEngine.SetPrevTrainingSetDetailsDto"/>
         break;
 
     case SpaEngineStatesEnum.AddTraining:
@@ -49,10 +49,6 @@
     public ICookieManager CookieManager {get; set;}
     [Inject]
     public IConfiguration Configuration {get; set;}
-
-    //[Inject]
-    //public ITrainingService trainingService {get; set;}
-    //public IEnumerable<TrainingSetDto> UserTrainingsList {get; set;} 
     protected override void OnInitialized()
     {
         this.LoFitSpaEngine =  new SpaEngineService();

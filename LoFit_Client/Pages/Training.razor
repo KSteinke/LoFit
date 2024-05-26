@@ -10,21 +10,21 @@
     </div>
 </div>
 
-@if((updatedTrainingSetDetailsDto != null) && (ExerciseCounter >= 0) && (ExerciseCounter < updatedTrainingSetDetailsDto.ExerciseDetailsDtos.Count()))
+@if((NewTrainingSetDetailsDto != null) && (ExerciseCounter >= 0) && (ExerciseCounter < NewTrainingSetDetailsDto.ExerciseDetailsDtos.Count()))
 {
     <div class="row mb-4">
         <div class="col text-center mx-3">
             <h3 class="text-dark  fw-bolder">Training step:</h3>
         </div>
         <div class="col text-center mx-3">
-            <h1 class="text-dark fw-bolder">@(ExerciseCounter+1) of @(updatedTrainingSetDetailsDto.ExerciseDetailsDtos.Count())</h1>
+            <h1 class="text-dark fw-bolder">@(ExerciseCounter+1) of @(NewTrainingSetDetailsDto.ExerciseDetailsDtos.Count())</h1>
         </div>
     </div>
 
     <div class="row mb-4 mx-3 justify-content-center">
         <div class="col text-center border border-3 border-dark rounded-5">
             <div class="row my-2">
-                <h1 class="text-dark fw-bolder">@updatedTrainingSetDetailsDto.ExerciseDetailsDtos[ExerciseCounter].Name</h1>
+                <h1 class="text-dark fw-bolder">@NewTrainingSetDetailsDto.ExerciseDetailsDtos[ExerciseCounter].Name</h1>
             </div>
             <div class="row my-2 align-items-center">
                 <div class="col-6">
@@ -35,7 +35,7 @@
                         <select class="form-select rounded-5 border border-3 border-dark" id="exampleSelect1">
                             @for(int i=1; i<101; i++)
                             {
-                                if(i == updatedTrainingSetDetailsDto.ExerciseDetailsDtos[ExerciseCounter].PrevWeight)
+                                if(i == NewTrainingSetDetailsDto.ExerciseDetailsDtos[ExerciseCounter].PrevWeight)
                                 {
                                     <option class="text-dark" selected>@i kg</option>
                                 }
@@ -54,10 +54,10 @@
                 </div>
                 <div class="col-6">
                     <div>
-                        <select class="form-select rounded-5 border border-3 border-dark" id="exampleSelect1">
+                        <select class="form-select rounded-5 border border-3 border-dark" id="exampleSelect1" @bind = "NewTrainingSetDetailsDto.ExerciseDetailsDtos[ExerciseCounter].PrevRepetitions">
                             @for(int i=1; i<50; i++)
                             {
-                                if(i == updatedTrainingSetDetailsDto.ExerciseDetailsDtos[ExerciseCounter].PrevRepetitions)
+                                if(i == NewTrainingSetDetailsDto.ExerciseDetailsDtos[ExerciseCounter].PrevRepetitions)
                                 {
                                     <option class="text-dark" selected>@i</option>
                                 }
@@ -100,14 +100,32 @@
 </div>
 
 @code{
-    
-    public TrainingSetDetailsDto? updatedTrainingSetDetailsDto {get; set;}
-
+    [Inject]
+    public ITrainingService TrainingService {get; set;}
     [Parameter]
-    public TrainingSetDetailsDto? trainingSetDetailsDto {get; set;}
+    public TrainingSetDto TrainingSetDto {get; set;}
 
+    public TrainingSetDetailsDto? PrevTrainingSetDetailsDto {get; set;}
+   
+    public TrainingSetDetailsDto? NewTrainingSetDetailsDto {get; set;}
+
+    protected override async Task OnInitializedAsync()
+    {
+        PrevTrainingSetDetailsDto = await TrainingService.GetTrainingSetDetailsAsync(TrainingSetDto.Id);
+        NewTrainingSetDetailsDto = PrevTrainingSetDetailsDto.DeepClone();
+        await PrevTrainingSetDetailsDtoChanged();
+       
+    }
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        StartTimer();
+    }
     [Parameter]
-    public EventCallback FinishTrainingCallback {get; set;}
+    public EventCallback<TrainingSetDetailsDto> SetPrevTrainingSetDetailsDto {get; set;}
+    [Parameter]
+    public EventCallback<TrainingSetDetailsDto> FinishTrainingCallback {get; set;}
 
     public int ExerciseCounter = 0; 
 
@@ -118,9 +136,9 @@
 
     public async Task NextExercise()
     {
-        if(ExerciseCounter < updatedTrainingSetDetailsDto.ExerciseDetailsDtos.Count()-1)
+        if(ExerciseCounter < NewTrainingSetDetailsDto.ExerciseDetailsDtos.Count()-1)
         {
-            updatedTrainingSetDetailsDto.ExerciseDetailsDtos[ExerciseCounter].PrevExerciseTime = elapsedTime;
+            NewTrainingSetDetailsDto.ExerciseDetailsDtos[ExerciseCounter].PrevExerciseTime = elapsedTime;
             timerEnabled = false;
             StopAndResetTimer();
             StartTimer();
@@ -129,26 +147,25 @@
         }
         else
         {
-            updatedTrainingSetDetailsDto.ExerciseDetailsDtos[ExerciseCounter].PrevExerciseTime = elapsedTime;
+            NewTrainingSetDetailsDto.ExerciseDetailsDtos[ExerciseCounter].PrevExerciseTime = elapsedTime;
             timerEnabled = false;
             StopAndResetTimer();
             await FinishTraining();
         }
     }
 
+    public async Task PrevTrainingSetDetailsDtoChanged()
+    {
+        await SetPrevTrainingSetDetailsDto.InvokeAsync(PrevTrainingSetDetailsDto);
+    }
+
     public async Task FinishTraining()
     {
         StopAndResetTimer();
-        await FinishTrainingCallback.InvokeAsync();
+        await FinishTrainingCallback.InvokeAsync(NewTrainingSetDetailsDto);
     }
 
-    protected override void OnInitialized()
-    {
-        base.OnInitialized();
-        StartTimer();
-        updatedTrainingSetDetailsDto = trainingSetDetailsDto;
-        Console.WriteLine(updatedTrainingSetDetailsDto.ToString());
-    }
+    
 
     private void StartTimer()
     {

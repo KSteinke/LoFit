@@ -5,4 +5,5 @@ namespace LoFit_Client.Services.ClientServices.Interfaces;
 public interface ITrainingService
 {
     Task<IEnumerable<TrainingSetDto>> ListTrainingsAsync();
+    Task<TrainingSetDetailsDto> GetTrainingSetDetailsAsync(Guid trainingSetDto);
 }

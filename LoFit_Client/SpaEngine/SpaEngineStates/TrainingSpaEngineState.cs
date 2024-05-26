@@ -14,6 +14,7 @@ public class TrainingSpaEngineState:SpaEngineState
     {
         this.spaEngineService.NewTrainingSetDetailsDto = newTrainingSetDetailsDto;
         this.spaEngineService.TransitionTo(new SummarySpaEngineState());
+        //TODO - Delete debuging part
         Console.WriteLine("Old:");
         foreach(var x in this.spaEngineService.PrevTrainingSetDetailsDto.ExerciseDetailsDtos)
         {

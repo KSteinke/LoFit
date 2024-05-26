@@ -79,8 +79,14 @@
 <div class="row mb-4 mx-3 justify-content-center">
     <div class="col text-center mx-3">
         <div class="btn-group border border-3 border-dark" role="group" aria-label="Basic checkbox toggle button group">
-            <button type="button" class="btn btn-warning w-100 text-warning fs-5 fw-bolder border-end border-1 border-dark" id="btncheck1" autocomplete="off">Previous</button>
-            <button type="button" class="btn btn-success w-100 text-success fs-5 fw-bolder border-start border-1 border-dark" id="btncheck2" autocomplete="off" @onclick = "NextExercise">Next</button>
+            @if(ExerciseCounter > 0)
+            {
+                <button type="button" class="btn btn-warning w-100 text-warning fs-5 fw-bolder border-end border-1 border-dark" id="btncheck1" autocomplete="off" @onclick = "PrevExercise">Previous</button>
+            }
+            else{
+                <button type="button" class="btn btn-warning w-100 text-warning fs-5 fw-bolder border-end border-1 border-dark disabled" id="btncheck2" autocomplete="off">Previous</button>
+            }
+            <button type="button" class="btn btn-success w-100 text-success fs-5 fw-bolder border-start border-1 border-dark" id="btncheck3" autocomplete="off" @onclick = "NextExercise">Next</button>
         </div>
     </div>
 </div>
@@ -102,6 +108,7 @@
         await PrevTrainingSetDetailsDtoChanged();
         await InvokeAsync(StateHasChanged);
 
+        //TODO - Delet debugging parameters
         foreach(var x in NewTrainingSetDetailsDto.ExerciseDetailsDtos)
         {
             Console.WriteLine(x.Name + " " + x.PrevWeight + "kg " + "Repets:" + x.PrevRepetitions + "Time:" + x.PrevExerciseTime);
@@ -149,6 +156,20 @@
         }
     }
 
+    public async Task PrevExercise()
+    {
+        Console.WriteLine($"Conter: {ExerciseCounter}");
+        if(ExerciseCounter > 0)
+        {
+            NewTrainingSetDetailsDto.ExerciseDetailsDtos[ExerciseCounter].PrevExerciseTime = elapsedTime;
+            timerEnabled = false;
+            StopAndResetTimer();
+            StartTimer();
+            ExerciseCounter -=1;
+            await InvokeAsync(StateHasChanged);
+        }
+    }
+
     /* Passes Last Training Details into state machnie */
     public async Task PrevTrainingSetDetailsDtoChanged()
     {
@@ -163,6 +184,8 @@
     }
 
     
+
+    /* Timer related functions below */
 
     private void StartTimer()
     {

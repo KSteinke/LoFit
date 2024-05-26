@@ -9,14 +9,13 @@ using LoFit_Models.MockupData;
 public class SpaEngineService : ISpaEngineService
 {
     private SpaEngineState spaState;
-    private IEnumerable<TrainingSetDto> trainingSetDtos;
-    public IEnumerable<TrainingSetDto> TrainingSetDtos
-    {
-        get { return this.trainingSetDtos;}
-        set { this.trainingSetDtos = value;}
-    }
-    public TrainingSetDetailsDto TrainingSetDetailsDto{get; set;}
-    public TrainingSetDetailsDto TrainingSetDetailsDtoUpdated {get; set;}
+    public TrainingSetDto TrainingSetDto { get; set; }
+
+
+    public TrainingSetDetailsDto PrevTrainingSetDetailsDto{get; set;}
+    public TrainingSetDetailsDto NewTrainingSetDetailsDto {get; set;}
+
+
     
     public SpaEngineService()
     {
@@ -27,9 +26,8 @@ public class SpaEngineService : ISpaEngineService
         this.spaState = newSpaState;
         this.spaState.SetSpaEngineService(this);
     }
-    public async Task StartTraining()
+    public void StartTraining()
     {
-        this.TrainingSetDtos = await MockupData.MockUpListTrainingsAsync();
         spaState.StartTraining();
     }
 
@@ -38,20 +36,24 @@ public class SpaEngineService : ISpaEngineService
         spaState.AddNewTrainingSet();
     }
 
-    public async Task SaveNewTraining(TrainingSetDto newTrainingSetDto)
+    public void SaveNewTraining()
     {
-        spaState.SaveNewTraining(newTrainingSetDto);
+        spaState.SaveNewTraining();
     }
 
-    public async Task StartTrainingSet()
+    public void StartTrainingSet(TrainingSetDto trainingDto)
     {
-        this.TrainingSetDetailsDto = await MockupData.GetTrainingSetDetailsDto();
-        spaState.StartTrainingSet();
+        spaState.StartTrainingSet(trainingDto);
     }
 
-    public void FinishTraining()
+    public void SetPrevTrainingSetDetailsDto(TrainingSetDetailsDto prevTrainingSetDetailsDto)
     {
-        spaState.FinishTraining();
+        spaState.SetPrevTrainingSetDetailsDto(prevTrainingSetDetailsDto);
+    }
+
+    public void FinishTraining(TrainingSetDetailsDto newTrainingSetDetailsDto)
+    {
+        spaState.FinishTraining(newTrainingSetDetailsDto);
     }
 
     public void ReturnToInit()

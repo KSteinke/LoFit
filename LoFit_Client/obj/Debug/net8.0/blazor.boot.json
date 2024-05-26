@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "LoFit_Client",
   "resources": {
-    "hash": "sha256-Axebni8w7JbWQxbFEX8IJtlFbtLBfXb0i5E6HRgyKDA=",
+    "hash": "sha256-HqzQ6kFllLFGh/JlnLwI5ScScWPtlN+MPeBdl+6EZro=",
     "jsModuleNative": {
       "dotnet.native.8.0.1.ejrzkkb2ds.js": "sha256-SGOlISx+3G4kkvpC9Uq3qoPGsnjxGmW61QBev0lyI5U="
     },
@@ -208,12 +208,12 @@
       "mscorlib.wasm": "sha256-EpWTfh4m/hEcXRFYMCR9YeYHwdUJgcm1laBaxWfq2S4=",
       "netstandard.wasm": "sha256-2kH24/YfHmU3B4eYRyRmiwebYROM4+B9eDWKvMnUdP8=",
       "System.Private.CoreLib.wasm": "sha256-CsySKiP7HYY1pS8LTDE60EkqiX5oHb3WoEZHDNd1yK0=",
-      "LoFit_Models.wasm": "sha256-q1/MG0cVtzUGNa8WIeFAoDAFEQ79/jxaJBHmBFUJKco=",
-      "LoFit_Client.wasm": "sha256-cQMBwBws65DE3awL9uwId0B3KvKUsfzJrzijdeIuX0k="
+      "LoFit_Models.wasm": "sha256-4uCIDZj14XqTX2zBVA+TiAsQYV1TxbXTm0MVtKxL42Q=",
+      "LoFit_Client.wasm": "sha256-nYRsy4dFNq1o2Os5DdsNzCM0tdBEPgUM0OLWq5QN5ws="
     },
     "pdb": {
-      "LoFit_Models.pdb": "sha256-VTqUCYkE8MkOqi+vytA2UVC4YSrRKWCDUFjrdCDfBtw=",
-      "LoFit_Client.pdb": "sha256-Beh+Lo2P4d/15aHuHCJBmBUEzHDcEQZBuuBrJNSIcTY="
+      "LoFit_Models.pdb": "sha256-8HKepKR6SmalJOg1aQjy2fkwfRA0l5ERyNSMf88V7j0=",
+      "LoFit_Client.pdb": "sha256-qKHtjHqypQAgEtuwv505Db/2/KVWWVOIgUSGuZbvPDY="
     }
   },
   "cacheBootResources": true,

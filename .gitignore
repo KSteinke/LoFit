@@ -9,3 +9,4 @@ LoFit_Server/obj
 LoFit_Client/obj
 LoFit_Client/obj/Debug
 LoFit_Client/bin/*
+.vscode

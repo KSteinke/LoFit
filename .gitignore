@@ -4,6 +4,8 @@
 *.dll
 *.pdb
 *.exe
+LoFit_Server\bin\*
+LoFit_Server\obj\*
 LoFit_Server/bin/*
 LoFit_Server/obj/*
 LoFit_Server/obj/Debug/*
@@ -13,6 +15,6 @@ LoFit_Client/obj/Debug/*
 LoFit_Client/bin/*
 LoFit_Models/bin/*
 LoFit_Models/obj/*
-LoFit_Model/obj/Debug/*
-LoFit_Model/obj/Debug/net8.0/*
+LoFit_Models/obj/Debug/*
+LoFit_Models/obj/Debug/net8.0/*
 .vscode

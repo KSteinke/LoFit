@@ -37,12 +37,14 @@ public abstract class SpaEngineState
     {
         //TODO - Null handling 
         this.spaEngineService.PrevTrainingSetDetailsDto = prevTrainingSetDetailsDto;
+        /*
         Console.WriteLine("OldFirst:");
         foreach(var x in this.spaEngineService.PrevTrainingSetDetailsDto.ExerciseDetailsDtos)
         {
             Console.WriteLine(x.Name + " " + x.PrevWeight + "kg " + "Repets:" + x.PrevRepetitions + "Time:" + x.PrevExerciseTime);
         }
         Console.WriteLine("-------------------------");
+        */
     }
     public virtual void FinishTraining(TrainingSetDetailsDto newTrainingSetDetailsDto)
     { /* Empty Default Implementation */ }

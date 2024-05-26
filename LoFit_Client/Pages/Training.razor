@@ -32,17 +32,10 @@
                 </div>
                 <div class="col-6">
                     <div>
-                        <select class="form-select rounded-5 border border-3 border-dark" id="exampleSelect1">
-                            @for(int i=1; i<101; i++)
+                        <select class="form-select rounded-5 border border-3 border-dark" id="exampleSelect1" @bind="NewTrainingSetDetailsDto.ExerciseDetailsDtos[ExerciseCounter].PrevWeight">
+                            @for (int j = 1; j < 101; j++)
                             {
-                                if(i == NewTrainingSetDetailsDto.ExerciseDetailsDtos[ExerciseCounter].PrevWeight)
-                                {
-                                    <option class="text-dark" selected>@i kg</option>
-                                }
-                                else
-                                {
-                                    <option class="text-dark">@i kg</option>
-                                }
+                                <option class="text-dark" value="@j">@j kg</option>
                             }
                         </select>
                     </div>
@@ -54,17 +47,10 @@
                 </div>
                 <div class="col-6">
                     <div>
-                        <select class="form-select rounded-5 border border-3 border-dark" id="exampleSelect1" @bind = "NewTrainingSetDetailsDto.ExerciseDetailsDtos[ExerciseCounter].PrevRepetitions">
+                        <select class="form-select rounded-5 border border-3 border-dark" id="exampleSelect2" @bind = "NewTrainingSetDetailsDto.ExerciseDetailsDtos[ExerciseCounter].PrevRepetitions">
                             @for(int i=1; i<50; i++)
                             {
-                                if(i == NewTrainingSetDetailsDto.ExerciseDetailsDtos[ExerciseCounter].PrevRepetitions)
-                                {
-                                    <option class="text-dark" selected>@i</option>
-                                }
-                                else
-                                {
-                                    <option class="text-dark">@i</option>
-                                }
+                                <option class="text-dark" value="@i">@i</option>
                             }
                         </select>
                     </div>
@@ -114,6 +100,13 @@
         PrevTrainingSetDetailsDto = await TrainingService.GetTrainingSetDetailsAsync(TrainingSetDto.Id);
         NewTrainingSetDetailsDto = PrevTrainingSetDetailsDto.DeepClone();
         await PrevTrainingSetDetailsDtoChanged();
+        await InvokeAsync(StateHasChanged);
+
+        foreach(var x in NewTrainingSetDetailsDto.ExerciseDetailsDtos)
+        {
+            Console.WriteLine(x.Name + " " + x.PrevWeight + "kg " + "Repets:" + x.PrevRepetitions + "Time:" + x.PrevExerciseTime);
+        }
+        Console.WriteLine("-------------------------");
        
     }
 
@@ -122,6 +115,8 @@
         base.OnInitialized();
         StartTimer();
     }
+
+
     [Parameter]
     public EventCallback<TrainingSetDetailsDto> SetPrevTrainingSetDetailsDto {get; set;}
     [Parameter]

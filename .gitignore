@@ -6,9 +6,11 @@
 *.exe
 LoFit_Server/bin/*
 LoFit_Server/obj/*
+LoFit_Server/obj/Debug/*
 LoFit_Client/obj/*
 LoFit_Client/obj/Debug/*
 LoFit_Client/bin/*
 LoFit_Models/bin/*
 LoFit_Models/obj/*
+LoFit_CModel/obj/Debug/*
 .vscode
